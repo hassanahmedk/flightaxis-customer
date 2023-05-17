@@ -5,6 +5,8 @@ import GetAQuoteDialog from "../../components/getaquotedialog/GetAQuoteDialog";
 import { FirstPageTwoTone } from "@mui/icons-material";
 import GetAQuote from "../../components/getaquotedialog/GetAQuote";
 
+
+
 const SearchResultsRoundTrip = ({ isMobile }) => {
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -23,6 +25,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
     "November",
     "December",
   ];
+
 
   let departing_on = state.formData.departing_on.split("-");
   let returning_on = state.formData.returning_on.split("-");
@@ -64,10 +67,10 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
         <Typography
           variant={isMobile ? "h5" : "h3"}
           textAlign="center"
-          sx={{ width: "100%" }}
+          sx={{ width: "100%", fontWeight:500 }}
         >
-          From {state.formData.leaving_from.split(",")[0]}{" "}
-          <span style={{ color: "#252f86" }}>To</span>{" "}
+          <span style={{ color: "#252f86" }}>From</span> {state.formData.leaving_from.split(",")[0]}{" "}
+          <span style={{ color: "#252f86" }}>to </span>
           {state.formData.going_to.split(",")[0]}
         </Typography>
         <Box
@@ -102,9 +105,9 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
                     sx={{ width: "100%" }}
                   >
                     <img
-                      src="/images/flight-logo.png"
+                      src={"/images/airlines/" + flight.airline.split(" ")[0] + ".png"}
                       alt="flight-logo"
-                      width="290vw"
+                      width="200vw"
                     />
                     <Typography variant="h4" sx={{ color: "#252f86" }}>
                       {flight.leaving_from.split(",")[0]}
@@ -138,9 +141,9 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
                     sx={{ width: "100%" }}
                   >
                     <img
-                      src="/images/flight-logo.png"
+                      src={"/images/airlines/" + flight.airline.split(" ")[0] + ".png"}
                       alt="flight-logo"
-                      width="290vw"
+                      width="200vw"
                     />
                     <Typography variant="h4" sx={{ color: "#252f86" }}>
                       {flight.leaving_from.split(",")[0]}

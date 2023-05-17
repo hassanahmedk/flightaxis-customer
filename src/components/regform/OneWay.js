@@ -17,7 +17,11 @@ const OneWay = ({ isMobile }) => {
 	const navigate = useNavigate();
 
 	const goToSearch = () => {
+		if(Object.values(formData).some(value => value === '')){
+			alert("Please fill in all the fields")
+		  } else {
 		navigate("/flights-loader", { state: { formData:formData, type:"one-way" }  });
+		  }
 	  };
 
 	  const handleFormChange = (event) => {
@@ -40,7 +44,8 @@ const OneWay = ({ isMobile }) => {
 	  };
 
 	return (
-		<Grid container spacing={1}>
+		<Grid container spacing={1} sx={{display:"flex", justifyContent:"center"}}>
+			<div style={{display:"flex", flexDirection:"center", gap:"12rem"}}>
 			<Grid item xs={12} sm={12} md={4}>
 				<Stack direction={"column"} justifyContent={"flex-start"}>
 					<Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -66,7 +71,8 @@ const OneWay = ({ isMobile }) => {
 					/>
 				</Stack>
 			</Grid>
-			<Grid item xs={12} sm={12} md={4}>
+			</div>
+			<Grid item xs={12} sm={12} md={6}>
 				<Stack direction={"column"} justifyContent={"flex-start"}>
 					<Typography variant="h6" sx={{ fontWeight: "bold" }}>
 						Departing
@@ -117,6 +123,7 @@ const OneWay = ({ isMobile }) => {
 							"& input::placeholder": {
 								fontSize: "11px",
 							},
+							width:"80%"
 						}}
 						name="adults"
 						value={formData.adults}
@@ -196,11 +203,12 @@ const OneWay = ({ isMobile }) => {
 					</Stack>
 				</Stack>
 			</Grid>
-			<Grid item xs={12} sm={12} md={4}>
+			<Grid item xs={12} sm={12} md={12}>
 				<Stack
 					direction={"column"}
-					justifyContent={"flex-end"}
-					alignItems={"flex-start"}
+					display="flex"
+					justifyContent={"center"}
+					alignItems={"center"}
 					sx={{ height: "100%" }}
 				>
 					<Button

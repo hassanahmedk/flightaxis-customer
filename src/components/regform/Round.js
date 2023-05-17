@@ -17,7 +17,11 @@ const Round = ({ isMobile }) => {
   const navigate = useNavigate();
 
   const goToSearch = () => {
-    navigate("/flights-loader", { state: { formData:formData }  });
+    if(Object.values(formData).some(value => value === '')){
+      alert("Please fill in all the fields")
+    } else {
+      navigate("/flights-loader", { state: { formData:formData }  });
+    }
   };
 
   const handleFormChange = (event) => {
@@ -40,7 +44,8 @@ const Round = ({ isMobile }) => {
   };
 
   return (
-    <Grid container spacing={1} >
+    <Grid container spacing={1} sx={{display:"flex", justifyContent:"center"}} >
+      <div style={{display:"flex", flexDirection:"center", gap:"12rem"}}>
       <Grid item xs={12} sm={12} md={4}>
         <Stack direction={"column"} justifyContent={"flex-start"}>
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -65,7 +70,8 @@ const Round = ({ isMobile }) => {
           />
         </Stack>
       </Grid>
-      <Grid item xs={12} sm={12} md={4}>
+      </div>
+      <Grid item xs={12} sm={12} md={6}>
         <Stack
           direction={isMobile ? "column" : "row"}
           justifyContent="flex-start"
@@ -84,6 +90,7 @@ const Round = ({ isMobile }) => {
               id="outlined-start-adornment"
               size="small"
               type="date"
+              
               sx={
                 isMobile
                   ? {
@@ -160,6 +167,7 @@ const Round = ({ isMobile }) => {
               "& input::placeholder": {
                 fontSize: "11px",
               },
+              width:"70%"
             }}
             name="adults"
             value={formData.adults}
@@ -239,11 +247,12 @@ const Round = ({ isMobile }) => {
           </Stack>
         </Stack>
       </Grid>
-      <Grid item xs={12} sm={12} md={4}>
+      <Grid item xs={12} sm={12} md={12}>
         <Stack
           direction={"column"}
-          justifyContent={"flex-end"}
-          alignItems={"flex-start"}
+          display="flex"
+          justifyContent={"center"}
+          alignItems={"center"}
           sx={{ height: "100%" }}
         >
           <Button

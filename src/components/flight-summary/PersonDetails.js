@@ -25,14 +25,22 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 	console.log(details);
 
 	const handleBookingSubmit = () => {
+		let trip_type = "Return";
+		if( details.returning_on === null){
+			trip_type = "One-way"
+		}
 		sendBooking({
 			...formData,
+			airline: details.airline,
 			leaving_from: details.leaving_from,
 			going_to: details.going_to,
+			departing_on: details.departing_on,
+			returning_on: details.returning_on,
 			adults: details.adults,
 			kids: details.kids,
 			infants: details.infants,
-			total_fare: details.fare
+			total_fare: details.fare,
+			trip_type
 
 		})
 		.then((result)=>setBooked())

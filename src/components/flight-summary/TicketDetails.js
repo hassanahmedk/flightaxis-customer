@@ -125,7 +125,7 @@ const TicketDetails = ({ isMobile, details }) => {
 						alignItems="flex-end"
 						spacing={2}
 					>
-						<Typography variant="p">AirBlue</Typography>
+						<Typography variant="p">{details.airline}</Typography>
 						<Typography variant="p" fontFamily="Bahnschrift">
 							{details.leaving_from}
 						</Typography>

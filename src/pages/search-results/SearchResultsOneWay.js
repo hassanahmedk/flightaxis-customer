@@ -173,6 +173,7 @@ const SearchResultsOneWay = ({ isMobile }) => {
 									leaving_from: flight.leaving_from,
 									going_to: flight.going_to,
 									departing_on: departing_on,
+									returning_on: null,
 									fare: parseInt(departing_fare),
 									adults: state.formData.adults,
 									kids: state.formData.kids,
