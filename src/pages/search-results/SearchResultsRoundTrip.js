@@ -267,6 +267,9 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
                       <Typography
                         variant="h6"
                         sx={{ fontFamily: "Bahnschrift" }}
+                        onClick = {() => {
+                          window.open('tel:+1234567890');
+                        }}
                       >
                         Call 02032871426
                       </Typography>
