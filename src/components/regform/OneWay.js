@@ -45,7 +45,7 @@ const OneWay = ({ isMobile }) => {
 
 	return (
 		<Grid container spacing={1} sx={{display:"flex", justifyContent:"center"}}>
-			<div style={{display:"flex", flexDirection:"center", gap:"12rem"}}>
+			<div style={ isMobile ?  {display:"flex", flexDirection:"column", gap:"0"} : {display:"flex", gap:"12rem"}}>
 			<Grid item xs={12} sm={12} md={4}>
 				<Stack direction={"column"} justifyContent={"flex-start"}>
 					<Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -55,6 +55,7 @@ const OneWay = ({ isMobile }) => {
 						setValue={handleAirportChange}
 						name="leaving_from"
 						label="Leaving from"
+						width="100%"
 					/>
 				</Stack>
 			</Grid>
@@ -67,7 +68,7 @@ const OneWay = ({ isMobile }) => {
 						setValue={handleAirportChange}
 						name="going_to"
 						label="Going to"
-					
+						width="100%"
 					/>
 				</Stack>
 			</Grid>

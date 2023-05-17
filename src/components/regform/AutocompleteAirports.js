@@ -35,7 +35,7 @@ function AutocompleteAirports(props) {
       <Autocomplete
         disablePortal={true}
         options={searchedAirports}
-        sx={{ width: 550 }}
+        sx={props.width ? { width: 350, marginLeft:"10px" }:{ width: 550 }}
         onChange={(event, value) => props.setValue(props.name, value)}
         noOptionsText={optionsText}
         value={props.initialValue}
