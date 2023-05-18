@@ -88,6 +88,7 @@ const RejForm = ({ isMobile }) => {
 						gap: isMobile ? "1px" : "20px",
 						borderTopRightRadius: "10px",
 						borderTopLeftRadius: "10px",
+						
 					}}
 				>
 					<img
@@ -113,10 +114,11 @@ const RejForm = ({ isMobile }) => {
 						width: isMobile ? "80vw" : "85vw",
 						overflowX: "hidden",
 						borderRadius: "10px",
-						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",
+						minHeight: isMobile ? (value === 0 ? "140vh" : "130vh") : "60vh",
 						background: "#f0f0e8",
 						borderTopRightRadius: 0,
 						borderTopLeftRadius: 0,
+
 					}}
 				>
 					<Box
@@ -128,6 +130,7 @@ const RejForm = ({ isMobile }) => {
 							display: "flex",
 							flexDirection: "column",
 							pr: "30px",
+							paddingLeft:isMobile && 0,
 						}}
 					>
 						<Tabs
@@ -175,14 +178,14 @@ const RejForm = ({ isMobile }) => {
 							/>
 						</Tabs>
 						<TabPanel value={value} index={0}>
-							<FormControl fullWidth>
+							<div>
 								<Round isMobile={isMobile} />
-							</FormControl>
+							</div>
 						</TabPanel>
 						<TabPanel value={value} index={1}>
-							<FormControl fullWidth>
+							<div fullWidth>
 								<OneWay isMobile={isMobile} />
-							</FormControl>
+							</div>
 						</TabPanel>
 					</Box>
 				</Paper>

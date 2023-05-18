@@ -13,6 +13,7 @@ const Places = ({ isMobile }) => {
 				alignItems: "center",
 				gap: "40px",
 				background: "#f0f0e8",
+				marginTop: isMobile ?"12rem":"0",
 			}}
 		>
 			<Stack
