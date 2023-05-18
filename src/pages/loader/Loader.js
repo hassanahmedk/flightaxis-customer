@@ -11,6 +11,8 @@ function Loader() {
   
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
+
         getFlights()
         .then(flights=>{
             flights = flights.filter((flight=>{
