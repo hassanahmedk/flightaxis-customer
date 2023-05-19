@@ -16,7 +16,15 @@ function Loader() {
         getFlights()
         .then(flights=>{
             flights = flights.filter((flight=>{
-              return (flight.leaving_from === formData.leaving_from && flight.going_to === formData.going_to)
+              if(flight.leaving_from === formData.leaving_from && flight.going_to === formData.going_to){
+                return flight;
+              }
+              if(flight.leaving_from === formData.going_to && flight.going_to === formData.leaving_from){
+                let temp = flight.leaving_from;
+                flight.leaving_from = flight.going_to;
+                flight.going_to = temp;
+                return flight;
+              }
         
             }))
             if(state.type === "one-way"){

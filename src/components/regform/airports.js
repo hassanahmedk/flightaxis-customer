@@ -2,7 +2,7 @@ const airports = [
   "Atlanta, Hartsfield Jackson Atlanta Intl Arpt [ATL], United States",
   "Chicago, Chicago Ohare Intl Arpt [ORD], United States",
   "Beijing, Capital Intl Arpt [PEK], China",
-
+  "Manchester, Manchester Arpt [MAN], United Kingdom",
   "Kingston, Norman Manley Intl Arpt [KIN], Jamaica",
   "London, Heathrow Arpt [LHR], United Kingdom",
   "Paris, Charles De Gaulle Arpt [CDG], France",
@@ -29,7 +29,7 @@ const airports = [
   "Chengdu, Shuangliu Arpt [CTU], China",
   "Toronto, Lester B Pearson Intl Arpt [YYZ], Canada",
   "Brussels, Brussels Natl Arpt [BRU], Belgium",
-  "Manchester, Manchester Arpt [MAN], United Kingdom",
+
   "Vienna, Schwechat Arpt [VIE], Austria",
   "Charlotte, Charlotte Douglas Intl Arpt [CLT], United States",
   "Philadelphia, Philadelphia Intl Arpt [PHL], United States",

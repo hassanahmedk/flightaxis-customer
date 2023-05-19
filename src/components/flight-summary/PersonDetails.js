@@ -1,3 +1,4 @@
+import { Filter } from "@mui/icons-material";
 import { Box, Typography, Stack, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import { sendBooking } from "../../assets/api/api";
@@ -7,8 +8,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 		name:"",
 		customer_email:"",
 		customer_phone:"",
-		total_fare:"",
-		side_notes: "",
+		side_notes: " ",
 	})
 
 	const handleFormChange = (event) => {
@@ -29,6 +29,12 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 		if( details.returning_on === null){
 			trip_type = "One-way"
 		}
+
+
+		if (Object.values(formData).some((value) => value === "")) {
+			alert("Please fill in all the fields");
+		  } else {
+		  
 		sendBooking({
 			...formData,
 			airline: details.airline,
@@ -45,6 +51,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 		})
 		.then((result)=>setBooked())
 		.catch((error)=>alert("An error occured, try again"))
+}
 	}
 
 	return (
@@ -75,7 +82,11 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					placeholder="Full Name"
 					size="small"
 					InputProps={{
-						style: { border: "2px solid white" },
+						style: { border: "2px solid #ffffff00", "&:focus": {
+							borderColor: "blue",
+						  },"&:hover": {
+							borderColor: "blue",
+						  }, },
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -99,7 +110,11 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					size="small"
 					type="email"
 					InputProps={{
-						style: { border: "2px solid white" },
+						style: { border: "2px solid #ffffff00", "&:focus": {
+							borderColor: "blue",
+						  },"&:hover": {
+							borderColor: "blue",
+						  }, },
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -122,7 +137,11 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					size="small"
 					type="phone"
 					InputProps={{
-						style: { border: "2px solid white" },
+						style: { border: "2px solid #ffffff00", "&:focus": {
+							borderColor: "blue",
+						  },"&:hover": {
+							borderColor: "blue",
+						  }, },
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -146,13 +165,11 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					multiline
 					minRows={7}
 					InputProps={{
-						style: { border: "2px solid white" },
-					}}
-					sx={{
-						"& input::placeholder": {
-							fontSize: "15px",
-							color: "white",
-						},
+						style: { border: "2px solid #ffffff00", "&:focus": {
+							borderColor: "blue",
+						  },"&:hover": {
+							borderColor: "blue",
+						  }, },
 					}}
 					name="side_notes"
 					value={formData.side_notes}
