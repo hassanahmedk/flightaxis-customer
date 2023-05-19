@@ -50,7 +50,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 	return (
 		<Box
 			sx={{
-				background: "#17a5f7",
+				background: "#17a5f7aa",
 				p: "30px",
 				display: "flex",
 				flexDirection: "column",
@@ -60,6 +60,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				height: "inherit",
 				color: "#ffff",
 				gap: "30px",
+				boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
 			}}
 		>
 			<Typography variant="h4" textAlign="center">
@@ -159,7 +160,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				/>
 			</Stack>
 			<Button onClick={handleBookingSubmit} variant="contained" sx={{ mt: 5 }}>
-				<Typography variant="h5" fontFamily="Bahnschrift">
+				<Typography variant="p" fontFamily="Poppins" sx={{color:"#fff", fontSize:"1.2rem"}}>
 					Confirm booking
 				</Typography>
 			</Button>

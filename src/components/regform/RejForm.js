@@ -78,7 +78,7 @@ const RejForm = ({ isMobile }) => {
 			>
 				<Box
 					sx={{
-						width: isMobile ? "80vw" : "85vw",
+						width: isMobile ? "80vw" : "65vw",
 						height: "45px",
 						backgroundColor: "rgb(0,0,0)",
 						opacity: 0.7,
@@ -111,11 +111,11 @@ const RejForm = ({ isMobile }) => {
 						flexDirection: "column",
 						justifyContent: "flex-start",
 						alignItems: "center",
-						width: isMobile ? "80vw" : "85vw",
+						width: isMobile ? "80vw" : "65vw",
 						overflowX: "hidden",
 						borderRadius: "10px",
 						minHeight: isMobile ? (value === 0 ? "140vh" : "130vh") : "60vh",
-						background: "#f0f0e8",
+						background: "#F1F6F9",
 						borderTopRightRadius: 0,
 						borderTopLeftRadius: 0,
 
@@ -154,10 +154,13 @@ const RejForm = ({ isMobile }) => {
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
 										color: "#FFF",
-										borderRadius: "10px",
 									},
+									borderRadius: "10px",
 									color: "#46aef7",
+									fontWeight:500, 
+									border:"1px solid #45aef7",
 									fontSize: "12px",
+									marginRight:"0.5rem"
 								}}
 							/>
 							<Tab
@@ -170,9 +173,11 @@ const RejForm = ({ isMobile }) => {
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
 										color: "#FFF",
-										borderRadius: "10px",
 									},
+									borderRadius: "10px",
 									color: "#46aef7",
+									fontWeight:500, 
+									border:"1px solid #45aef7",
 									fontSize: "12px",
 								}}
 							/>

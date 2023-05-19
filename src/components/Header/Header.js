@@ -35,7 +35,7 @@ const Header = ({ isMobile }) => {
 		<AppBar
 			position="static"
 			sx={{
-				background: isMobile ? "#41beba" : "transparent",
+				background: isMobile ? "#76cfde" : "transparent",
 				height: "30vh",
 				boxShadow: "none",
 			}}
@@ -45,6 +45,7 @@ const Header = ({ isMobile }) => {
 					height: isMobile ? "17vh" : "8vh",
 					width: "100%",
 					background: "rgb(0,0,0)",
+					color:"#Fff",
 					display: "flex",
 					flexDirection: isMobile ? "column" : "row",
 					justifyContent: isMobile ? "center" : "space-around",
@@ -58,12 +59,13 @@ const Header = ({ isMobile }) => {
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
+						color:"#fff"
 					}}
 				>
 					<img src="/images/message-icon.png" alt="message" width="25vw" />
 					&nbsp; &nbsp; Support@flightaxis.co.uk
 				</Typography>
-				<Typography variant="subtitle1" sx={{ fontFamily: "MV Boli" }}>
+				<Typography variant="subtitle1" sx={{ fontFamily: "MV Boli", color:"#fff", }}>
 					We are open 24 Hours a Day, 7 Days a weak
 				</Typography>
 				<Typography
@@ -224,8 +226,8 @@ const Header = ({ isMobile }) => {
 								pl: "30px",
 								pr: "30px",
 								height: "90px",
-								background: "#41beba",
-								borderRadius: "30px",
+								background: "#76cfde",
+								borderRadius: "50px",
 								display: "flex",
 								flexDirection: "row",
 								justifyContent: "center",
@@ -245,7 +247,9 @@ const Header = ({ isMobile }) => {
 									textDecoration: "none",
 								}}
 							>
-								<Link style={{ textDecoration: "none", color: "white" }} to="/">
+								<Link style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
+									opacity:0.9
+								} }} to="/">
 									Home
 								</Link>
 							</Typography>
@@ -263,7 +267,9 @@ const Header = ({ isMobile }) => {
 							>
 								<Link
 									to="/contact-us"
-									style={{ textDecoration: "none", color: "white" }}
+									style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
+										opacity:0.9
+									} }}
 								>
 									Contact Us
 								</Link>
@@ -281,13 +287,15 @@ const Header = ({ isMobile }) => {
 								}}
 							>
 								<Link
-									style={{ textDecoration: "none", color: "white" }}
+									style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
+										opacity:0.9
+									} }}
 									to="/about-us"
 								>
 									About Us
 								</Link>
 							</Typography>
-							<Button variant="contained" onClick={openQuote}>
+							<Button variant="contained" onClick={openQuote} sx={{borderRadius:"5px"}}>
 								Get a Quote
 							</Button>
 						</Box>

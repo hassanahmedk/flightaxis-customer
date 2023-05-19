@@ -28,7 +28,7 @@ const FlightSummary = ({ isMobile, details }) => {
 					alignItems: "stretch",
 					borderRadius: "10px",
 					overflow: "hidden",
-					background: "#f0f0e8",
+					background: "#F1F6F9",
 					gap: "30px",
 				}}
 			>

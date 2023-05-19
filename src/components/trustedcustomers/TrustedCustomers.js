@@ -16,7 +16,7 @@ const TrustedCustomers = ({ isMobile }) => {
 			direction="column"
 			justifyContent="center"
 			alignItems="center"
-			sx={{ pt: "55px", pb: "55px", background: "#f0f0e8" }}
+			sx={{ pt: "55px", pb: "55px", background: "#F1F6F9" }}
 		>
 			<Stack
 				direction="row"
@@ -70,7 +70,7 @@ const TrustedCustomers = ({ isMobile }) => {
 					<Paper
 						elevation={7}
 						sx={{
-							width: "260px",
+							width: "360px",
 							height: "280px",
 							background: "#8accf2",
 							display: "flex",
@@ -78,6 +78,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							justifyContent: "center",
 							alignItems: "center",
 							position: "relative",
+							borderRadius:"6px"
 						}}
 					>
 						<Avatar
@@ -93,7 +94,7 @@ const TrustedCustomers = ({ isMobile }) => {
 						<Paper
 							sx={{
 								background: "#17a5f7",
-								width: "200px",
+								width: "300px",
 								height: "170px",
 								position: "absolute",
 								bottom: 15,
@@ -103,6 +104,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
+								borderRadius:"4px"
 							}}
 						>
 							<Typography variant="subtitle1" sx={{ color: "white" }}>
@@ -119,7 +121,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							/>
 							<Typography
 								variant="subtitle2"
-								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
+								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
 							>
 								" This travel agency website exceeded my expectations with their
 								easy booking process and expert travel agents who provided
@@ -142,7 +144,7 @@ const TrustedCustomers = ({ isMobile }) => {
 					<Paper
 						elevation={7}
 						sx={{
-							width: "260px",
+							width: "360px",
 							height: "280px",
 							background: "#8accf2",
 							display: "flex",
@@ -150,6 +152,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							justifyContent: "center",
 							alignItems: "center",
 							position: "relative",
+							borderRadius:"6px"
 						}}
 					>
 						<Avatar
@@ -165,7 +168,7 @@ const TrustedCustomers = ({ isMobile }) => {
 						<Paper
 							sx={{
 								background: "#17a5f7",
-								width: "200px",
+								width: "300px",
 								height: "170px",
 								position: "absolute",
 								bottom: 15,
@@ -175,6 +178,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
+								borderRadius:"4px"
 							}}
 						>
 							<Typography variant="subtitle1" sx={{ color: "white" }}>
@@ -191,7 +195,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							/>
 							<Typography
 								variant="subtitle2"
-								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
+								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
 							>
 								" This travel agency website exceeded my expectations with their
 								easy booking process and expert travel agents who provided
@@ -214,7 +218,7 @@ const TrustedCustomers = ({ isMobile }) => {
 					<Paper
 						elevation={7}
 						sx={{
-							width: "260px",
+							width: "360px",
 							height: "280px",
 							background: "#8accf2",
 							display: "flex",
@@ -222,6 +226,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							justifyContent: "center",
 							alignItems: "center",
 							position: "relative",
+							borderRadius:"6px"
 						}}
 					>
 						<Avatar
@@ -237,7 +242,7 @@ const TrustedCustomers = ({ isMobile }) => {
 						<Paper
 							sx={{
 								background: "#17a5f7",
-								width: "200px",
+								width: "300px",
 								height: "170px",
 								position: "absolute",
 								bottom: 15,
@@ -247,6 +252,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
+								borderRadius:"4px"
 							}}
 						>
 							<Typography variant="subtitle1" sx={{ color: "white" }}>
@@ -263,7 +269,7 @@ const TrustedCustomers = ({ isMobile }) => {
 							/>
 							<Typography
 								variant="subtitle2"
-								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
+								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
 							>
 								" This travel agency website exceeded my expectations with their
 								easy booking process and expert travel agents who provided

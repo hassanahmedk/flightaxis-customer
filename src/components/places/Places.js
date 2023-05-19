@@ -12,8 +12,8 @@ const Places = ({ isMobile }) => {
 				justifyContent: "center",
 				alignItems: "center",
 				gap: "40px",
-				background: "#f0f0e8",
-				marginTop: isMobile ?"12rem":"0",
+				background: "#F1F6F9",
+				marginTop: isMobile ?"12rem":"10rem",
 			}}
 		>
 			<Stack
@@ -59,7 +59,7 @@ const Places = ({ isMobile }) => {
 				</Paper>
 				<Typography
 					variant="subtitle2"
-					sx={{ textAlign: "center", maxWidth: "250px" }}
+					sx={{ textAlign: "center", maxWidth: "250px", fontSize:isMobile?"12px":"16px", opacity:0.9 }}
 				>
 					Immerse yourself in the rich history and culture of Accra with our
 					travel package that includes visits to iconic landmarks, delicious
@@ -109,7 +109,7 @@ const Places = ({ isMobile }) => {
 				</Paper>
 				<Typography
 					variant="subtitle2"
-					sx={{ textAlign: "center", maxWidth: "250px" }}
+					sx={{ textAlign: "center", maxWidth: "250px", fontSize:isMobile?"12px":"16px", opacity:0.9 }}
 				>
 					Discover the natural beauty and diverse wildlife of Harare with our
 					travel package that offers exciting safari tours, scenic hiking
@@ -159,7 +159,7 @@ const Places = ({ isMobile }) => {
 				</Paper>
 				<Typography
 					variant="subtitle2"
-					sx={{ textAlign: "center", maxWidth: "250px" }}
+					sx={{ textAlign: "center", maxWidth: "250px", fontSize:isMobile?"12px":"16px", opacity:0.9 }}
 				>
 					Experience the dynamic energy and bustling city life of Lagos with our
 					travel package that includes visits to popular attractions, delicious

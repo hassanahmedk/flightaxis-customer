@@ -11,7 +11,6 @@ const TicketDetails = ({ isMobile, details }) => {
 				justifyContent: "center",
 				algnItems: "flex-start",
 				gap: "30px",
-				boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
 			}}
 		>
 			<Typography variant="h4">Flight Summary</Typography>
@@ -28,7 +27,11 @@ const TicketDetails = ({ isMobile, details }) => {
 					spacing={3}
 					sx={{ width: "100%" }}
 				>
-					<img src="/images/flight-logo.png" alt="flight-logo" width="150vw" />
+					<img
+                      src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
+                      alt="flight-logo"
+                      width="100vw"
+                    />
 					<Typography variant="h5" sx={{ color: "#252f86" }}>
 						{details.leaving_from.split(",")[0]}
 					</Typography>
@@ -49,6 +52,9 @@ const TicketDetails = ({ isMobile, details }) => {
 						<Typography variant="p">{details.departing_on}</Typography>
 					</Stack>
 				</Stack>
+				{details.returning_on !== null &&
+				
+				
 				<Stack
 					direction="row"
 					justifyContent="space-between"
@@ -56,7 +62,11 @@ const TicketDetails = ({ isMobile, details }) => {
 					spacing={3}
 					sx={{ width: "100%" }}
 				>
-					<img src="/images/flight-logo.png" alt="flight-logo" width="150vw" />
+					<img
+                      src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
+                      alt="flight-logo"
+                      width="100vw"
+                    />
 					<Typography variant="h5" sx={{ color: "#252f86" }}>
 						{details.leaving_from.split(",")[0]}
 					</Typography>
@@ -76,6 +86,7 @@ const TicketDetails = ({ isMobile, details }) => {
 						<Typography variant="p">{details.returning_on}</Typography>
 					</Stack>
 				</Stack>
+				}
 			</Stack>
 			<Paper
 				variant="outlined"
