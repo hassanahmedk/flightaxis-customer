@@ -5,69 +5,65 @@ import { sendBooking } from "../../assets/api/api";
 
 const PersonDetails = ({ details, isMobile, setBooked }) => {
 	const [formData, setFormData] = useState({
-		name:"",
-		customer_email:"",
-		customer_phone:"",
+		name: "",
+		customer_email: "",
+		customer_phone: "",
 		side_notes: " ",
-	})
+	});
 
 	const handleFormChange = (event) => {
-		const {name, value} = event.target;
-		setFormData((prev)=>{
+		const { name, value } = event.target;
+		setFormData((prev) => {
 			return {
 				...prev,
-				[name]:value
-			}
-		})
-
-	}
+				[name]: value,
+			};
+		});
+	};
 
 	console.log(details);
 
 	const handleBookingSubmit = () => {
 		let trip_type = "Return";
-		if( details.returning_on === null){
-			trip_type = "One-way"
+		if (details.returning_on === null) {
+			trip_type = "One-way";
 		}
-
 
 		if (Object.values(formData).some((value) => value === "")) {
 			alert("Please fill in all the fields");
-		  } else {
-		  
-		sendBooking({
-			...formData,
-			airline: details.airline,
-			leaving_from: details.leaving_from,
-			going_to: details.going_to,
-			departing_on: details.departing_on,
-			returning_on: details.returning_on,
-			adults: details.adults,
-			kids: details.kids,
-			infants: details.infants,
-			total_fare: details.fare,
-			trip_type
-
-		})
-		.then((result)=>setBooked())
-		.catch((error)=>alert("An error occured, try again"))
-}
-	}
+		} else {
+			sendBooking({
+				...formData,
+				airline: details.airline,
+				leaving_from: details.leaving_from,
+				going_to: details.going_to,
+				departing_on: details.departing_on,
+				returning_on: details.returning_on,
+				adults: details.adults,
+				kids: details.kids,
+				infants: details.infants,
+				total_fare: details.fare,
+				trip_type,
+			})
+				.then((result) => setBooked())
+				.catch((error) => alert("An error occured, try again"));
+		}
+	};
 
 	return (
 		<Box
 			sx={{
 				background: "#17a5f7aa",
-				p: "30px",
+				p: isMobile ? "10px" : "30px",
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "flex-start",
-				alignItems: "stretch",
+				justifyContent: isMobile ? "center" : "flex-start",
+				alignItems: isMobile ? "center" : "stretch",
 				width: "100%",
 				height: "inherit",
 				color: "#ffff",
 				gap: "30px",
-				boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+				boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
 			}}
 		>
 			<Typography variant="h4" textAlign="center">
@@ -82,11 +78,15 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					placeholder="Full Name"
 					size="small"
 					InputProps={{
-						style: { border: "2px solid #ffffff00", "&:focus": {
-							borderColor: "blue",
-						  },"&:hover": {
-							borderColor: "blue",
-						  }, },
+						style: {
+							border: "2px solid #ffffff00",
+							"&:focus": {
+								borderColor: "blue",
+							},
+							"&:hover": {
+								borderColor: "blue",
+							},
+						},
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -110,11 +110,15 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					size="small"
 					type="email"
 					InputProps={{
-						style: { border: "2px solid #ffffff00", "&:focus": {
-							borderColor: "blue",
-						  },"&:hover": {
-							borderColor: "blue",
-						  }, },
+						style: {
+							border: "2px solid #ffffff00",
+							"&:focus": {
+								borderColor: "blue",
+							},
+							"&:hover": {
+								borderColor: "blue",
+							},
+						},
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -137,11 +141,15 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					size="small"
 					type="phone"
 					InputProps={{
-						style: { border: "2px solid #ffffff00", "&:focus": {
-							borderColor: "blue",
-						  },"&:hover": {
-							borderColor: "blue",
-						  }, },
+						style: {
+							border: "2px solid #ffffff00",
+							"&:focus": {
+								borderColor: "blue",
+							},
+							"&:hover": {
+								borderColor: "blue",
+							},
+						},
 					}}
 					sx={{
 						"& input::placeholder": {
@@ -163,21 +171,33 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					id="message"
 					placeholder="Type Here"
 					multiline
-					minRows={7}
+					minRows={isMobile ? 6 : 7}
 					InputProps={{
-						style: { border: "2px solid #ffffff00", "&:focus": {
-							borderColor: "blue",
-						  },"&:hover": {
-							borderColor: "blue",
-						  }, },
+						style: {
+							border: "2px solid #ffffff00",
+							"&:focus": {
+								borderColor: "blue",
+							},
+							"&:hover": {
+								borderColor: "blue",
+							},
+						},
 					}}
 					name="side_notes"
 					value={formData.side_notes}
 					onChange={handleFormChange}
 				/>
 			</Stack>
-			<Button onClick={handleBookingSubmit} variant="contained" sx={{ mt: 5 }}>
-				<Typography variant="p" fontFamily="Poppins" sx={{color:"#fff", fontSize:"1.2rem"}}>
+			<Button
+				onClick={handleBookingSubmit}
+				variant="contained"
+				sx={{ mt: isMobile ? 1 : 5 }}
+			>
+				<Typography
+					variant="p"
+					fontFamily="Poppins"
+					sx={{ color: "#fff", fontSize: "1.2rem" }}
+				>
 					Confirm booking
 				</Typography>
 			</Button>

@@ -1,4 +1,4 @@
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { Box, Divider, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 
 const TicketDetails = ({ isMobile, details }) => {
@@ -21,17 +21,17 @@ const TicketDetails = ({ isMobile, details }) => {
 				spacing={5}
 			>
 				<Stack
-					direction="row"
+					direction={isMobile ? "column" : "row"}
 					justifyContent="space-between"
 					alignItems="center"
 					spacing={3}
 					sx={{ width: "100%" }}
 				>
 					<img
-                      src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
-                      alt="flight-logo"
-                      width="100vw"
-                    />
+						src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
+						alt="flight-logo"
+						width="100vw"
+					/>
 					<Typography variant="h5" sx={{ color: "#252f86" }}>
 						{details.leaving_from.split(",")[0]}
 					</Typography>
@@ -52,41 +52,39 @@ const TicketDetails = ({ isMobile, details }) => {
 						<Typography variant="p">{details.departing_on}</Typography>
 					</Stack>
 				</Stack>
-				{details.returning_on !== null &&
-				
-				
-				<Stack
-					direction="row"
-					justifyContent="space-between"
-					alignItems="center"
-					spacing={3}
-					sx={{ width: "100%" }}
-				>
-					<img
-                      src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
-                      alt="flight-logo"
-                      width="100vw"
-                    />
-					<Typography variant="h5" sx={{ color: "#252f86" }}>
-						{details.leaving_from.split(",")[0]}
-					</Typography>
-					<img src="/images/arrival-icon.png" alt="departure" width="40vw" />
-					<Typography variant="h5" sx={{ color: "#252f86" }}>
-						{details.going_to.split(",")[0]}
-					</Typography>
+				{details.returning_on !== null && (
 					<Stack
-						direction="column"
-						justifyContent="center"
+						direction={isMobile ? "column" : "row"}
+						justifyContent="space-between"
 						alignItems="center"
-						spacing={1}
+						spacing={3}
+						sx={{ width: "100%" }}
 					>
-						<Typography variant="p" sx={{ color: "#17a5f7" }}>
-							RETURN
+						<img
+							src={"/images/airlines/" + details.airline.split(" ")[0] + ".png"}
+							alt="flight-logo"
+							width="100vw"
+						/>
+						<Typography variant="h5" sx={{ color: "#252f86" }}>
+							{details.leaving_from.split(",")[0]}
 						</Typography>
-						<Typography variant="p">{details.returning_on}</Typography>
+						<img src="/images/arrival-icon.png" alt="departure" width="40vw" />
+						<Typography variant="h5" sx={{ color: "#252f86" }}>
+							{details.going_to.split(",")[0]}
+						</Typography>
+						<Stack
+							direction="column"
+							justifyContent="center"
+							alignItems="center"
+							spacing={1}
+						>
+							<Typography variant="p" sx={{ color: "#17a5f7" }}>
+								RETURN
+							</Typography>
+							<Typography variant="p">{details.returning_on}</Typography>
+						</Stack>
 					</Stack>
-				</Stack>
-				}
+				)}
 			</Stack>
 			<Paper
 				variant="outlined"
@@ -119,42 +117,87 @@ const TicketDetails = ({ isMobile, details }) => {
 					<Stack
 						direction="column"
 						justifyContent="center"
-						alignItems="flex-start"
+						alignItems="stretch"
 						spacing={2}
+						divider={<Divider />}
 					>
-						<Typography variant="p">Airline</Typography>
-						<Typography variant="p">Travel From</Typography>
-						<Typography variant="p">Travel To</Typography>
-						<Typography variant="p">Departure Date</Typography>
-						<Typography variant="p">Return Date</Typography>
-						<Typography variant="p">Trip Type</Typography>
-						<Typography variant="p">Fare Amount</Typography>
-					</Stack>
-					<Stack
-						direction="column"
-						justifyContent="center"
-						alignItems="flex-end"
-						spacing={2}
-					>
-						<Typography variant="p">{details.airline}</Typography>
-						<Typography variant="p" fontFamily="Bahnschrift">
-							{details.leaving_from}
-						</Typography>
-						<Typography variant="p" fontFamily="Bahnschrift">
-							{details.going_to}
-						</Typography>
-						<Typography variant="p">{details.departing_on}</Typography>
-						<Typography variant="p">{details.returning_on}</Typography>
-						<Typography variant="p">
-							{
-								details.returning_on ? (
-									"Round Trip"
-								) : (
-									"One Way"
-								)
-							}
-						</Typography>
-						<Typography variant="p">$ {details.fare}</Typography>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Airline</Typography>
+							<Typography variant="p">{details.airline}</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Travel From</Typography>
+							<Typography
+								variant="p"
+								fontFamily="Bahnschrift"
+								sx={{ ml: "10px" }}
+							>
+								{details.leaving_from}
+							</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Travel To</Typography>
+							<Typography
+								variant="p"
+								fontFamily="Bahnschrift"
+								sx={{ ml: "10px" }}
+							>
+								{details.going_to}
+							</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Departure Date</Typography>
+							<Typography variant="p">{details.departing_on}</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Return Date</Typography>
+							<Typography variant="p">{details.returning_on}</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Trip Type</Typography>
+							<Typography variant="p">
+								{details.returning_on ? "Round Trip" : "One Way"}
+							</Typography>
+						</Stack>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							alignItems="center"
+							sx={{ width: "100%" }}
+						>
+							<Typography variant="p">Fare Amount</Typography>
+							<Typography variant="p">$ {details.fare}</Typography>
+						</Stack>
 					</Stack>
 				</Stack>
 			</Paper>

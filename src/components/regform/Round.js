@@ -55,7 +55,11 @@ const Round = ({ isMobile }) => {
 	return (
 		<Grid container spacing={1}>
 			<Grid item xs={12} sm={12} md={4}>
-				<Stack direction={"column"} justifyContent={"flex-start"}>
+				<Stack
+					direction={"column"}
+					justifyContent={"flex-start"}
+					sx={{ width: "100%" }}
+				>
 					<Typography variant="h6" sx={{ fontWeight: "bold" }}>
 						From
 					</Typography>
@@ -86,7 +90,7 @@ const Round = ({ isMobile }) => {
 				<Stack
 					direction={isMobile ? "column" : "row"}
 					justifyContent="flex-start"
-					alignItems="center"
+					//alignItems="center"
 				>
 					<Stack
 						direction={"column"}
