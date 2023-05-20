@@ -132,6 +132,7 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 							<Typography
 								variant={isMobile ? "h6" : "h5"}
 								sx={{ fontFamily: "cursive", color: "white" }}
+								textAlign="center"
 							>
 								Request Call Back
 							</Typography>
