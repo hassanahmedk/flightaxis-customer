@@ -122,8 +122,12 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 											src="/images/departure-icon.png"
 											alt="departure"
 											width={isMobile ? "70vw" : "100vw"}
+											style={{ marginRight: isMobile ? 0 : "40px" }}
 										/>
-										<Typography variant="h4" sx={{ color: "#252f86" }}>
+										<Typography
+											variant="h4"
+											sx={{ color: "#252f86", mr: "40px" }}
+										>
 											{flight.going_to.split(",")[0]}
 										</Typography>
 										<Stack
@@ -131,7 +135,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 											justifyContent="center"
 											alignItems="center"
 											spacing={1}
-											sx={{ mr: "20px" }}
+											sx={{ ml: "30px" }}
 										>
 											<Typography variant="p" sx={{ color: "#17a5f7" }}>
 												DEPARTURE
@@ -162,6 +166,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 											src="/images/arrival-icon.png"
 											alt="departure"
 											width={isMobile ? "70vw" : "100vw"}
+											style={{ marginRight: isMobile ? 0 : "40px" }}
 										/>
 										<Typography variant="h4" sx={{ color: "#252f86" }}>
 											{flight.going_to.split(",")[0]}
