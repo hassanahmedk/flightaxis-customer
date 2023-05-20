@@ -16,6 +16,7 @@ const FlightSummary = ({ isMobile, details }) => {
 				alignItems: "center",
 				pt: "40px",
 				pb: "40px",
+				background: "#F1F6F9",
 			}}
 		>
 			<Paper
@@ -27,9 +28,8 @@ const FlightSummary = ({ isMobile, details }) => {
 					alignItems: "stretch",
 					borderRadius: "10px",
 					overflow: "hidden",
-					background: "#F1F6F9",
 					gap: "30px",
-					width: isMobile ? "85vw" : "inherit",
+					width: "90vw",
 				}}
 			>
 				{booked ? (
