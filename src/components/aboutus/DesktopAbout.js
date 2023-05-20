@@ -100,12 +100,12 @@ const DesktopAbout = () => {
 						Our Approach
 					</Typography>
 					<Typography variant="h6" textAlign="center">
-						Our mission is to help travellers to plan and book your best tours,
-						even though the implementation of strict quality requirements. The
-						vastness of the world, should inspire us. We are committed to
-						providing the continuous experience of the visitors from all over
-						the world. From the no-exclusive, as we try to get you to go and
-						find out by yourself.
+						We want nothing more than to share their thinking, when you discover
+						the world in one place ath the same time. We offer you a wide
+						variety of activities, including a variety of activities and tours
+						in over 250 locations around the globe. To enjoy, simply browse
+						through our cities and towns, in order to see what is available, in
+						order to enhace your travel experience.
 					</Typography>
 				</Stack>
 				<Paper
