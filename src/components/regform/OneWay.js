@@ -217,9 +217,10 @@ const OneWay = ({ isMobile }) => {
 										  }
 								}
 							>
-								<MenuItem selected value={1}>
-									1
+								<MenuItem selected value={0}>
+									0
 								</MenuItem>
+								<MenuItem value={1}>1</MenuItem>
 								<MenuItem value={2}>2</MenuItem>
 								<MenuItem value={3}>3</MenuItem>
 								<MenuItem value={4}>4</MenuItem>
@@ -269,9 +270,10 @@ const OneWay = ({ isMobile }) => {
 										  }
 								}
 							>
-								<MenuItem selected value={1}>
-									1
+								<MenuItem selected value={0}>
+									0
 								</MenuItem>
+								<MenuItem value={1}>1</MenuItem>
 								<MenuItem value={2}>2</MenuItem>
 								<MenuItem value={3}>3</MenuItem>
 								<MenuItem value={4}>4</MenuItem>
