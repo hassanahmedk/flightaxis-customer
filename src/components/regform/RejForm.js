@@ -78,7 +78,7 @@ const RejForm = ({ isMobile }) => {
 			>
 				<Box
 					sx={{
-						width: isMobile ? "80vw" : "65vw",
+						width: isMobile ? "80vw" : "75vw",
 						height: "45px",
 						backgroundColor: "rgb(0,0,0)",
 						opacity: 0.7,
@@ -88,7 +88,6 @@ const RejForm = ({ isMobile }) => {
 						gap: isMobile ? "1px" : "20px",
 						borderTopRightRadius: "10px",
 						borderTopLeftRadius: "10px",
-						
 					}}
 				>
 					<img
@@ -111,14 +110,13 @@ const RejForm = ({ isMobile }) => {
 						flexDirection: "column",
 						justifyContent: "flex-start",
 						alignItems: "center",
-						width: isMobile ? "80vw" : "65vw",
+						width: isMobile ? "80vw" : "75vw",
 						overflowX: "hidden",
 						borderRadius: "10px",
-						minHeight: isMobile ? (value === 0 ? "140vh" : "130vh") : "60vh",
-						background: "#F1F6F9",
+						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",
+						background: "#f0f0e8",
 						borderTopRightRadius: 0,
 						borderTopLeftRadius: 0,
-
 					}}
 				>
 					<Box
@@ -130,7 +128,6 @@ const RejForm = ({ isMobile }) => {
 							display: "flex",
 							flexDirection: "column",
 							pr: "30px",
-							paddingLeft:isMobile && 0,
 						}}
 					>
 						<Tabs
@@ -154,13 +151,10 @@ const RejForm = ({ isMobile }) => {
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
 										color: "#FFF",
+										borderRadius: "10px",
 									},
-									borderRadius: "10px",
 									color: "#46aef7",
-									fontWeight:500, 
-									border:"1px solid #45aef7",
 									fontSize: "12px",
-									marginRight:"0.5rem"
 								}}
 							/>
 							<Tab
@@ -173,24 +167,22 @@ const RejForm = ({ isMobile }) => {
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
 										color: "#FFF",
+										borderRadius: "10px",
 									},
-									borderRadius: "10px",
 									color: "#46aef7",
-									fontWeight:500, 
-									border:"1px solid #45aef7",
 									fontSize: "12px",
 								}}
 							/>
 						</Tabs>
 						<TabPanel value={value} index={0}>
-							<div>
+							<FormControl fullWidth>
 								<Round isMobile={isMobile} />
-							</div>
+							</FormControl>
 						</TabPanel>
 						<TabPanel value={value} index={1}>
-							<div fullWidth>
+							<FormControl fullWidth>
 								<OneWay isMobile={isMobile} />
-							</div>
+							</FormControl>
 						</TabPanel>
 					</Box>
 				</Paper>

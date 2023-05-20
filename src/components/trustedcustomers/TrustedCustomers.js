@@ -16,7 +16,7 @@ const TrustedCustomers = ({ isMobile }) => {
 			direction="column"
 			justifyContent="center"
 			alignItems="center"
-			sx={{ pt: "55px", pb: "55px", background: "#F1F6F9" }}
+			sx={{ pt: "55px", pb: "55px", background: "#f0f0e8" }}
 		>
 			<Stack
 				direction="row"
@@ -70,15 +70,14 @@ const TrustedCustomers = ({ isMobile }) => {
 					<Paper
 						elevation={7}
 						sx={{
-							width: "360px",
-							height: "280px",
+							width: "260px",
+							minHeight: "320px",
 							background: "#8accf2",
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
 							position: "relative",
-							borderRadius:"6px"
 						}}
 					>
 						<Avatar
@@ -94,8 +93,8 @@ const TrustedCustomers = ({ isMobile }) => {
 						<Paper
 							sx={{
 								background: "#17a5f7",
-								width: "300px",
-								height: "170px",
+								width: "200px",
+								minHeight: "210px",
 								position: "absolute",
 								bottom: 15,
 								display: "flex",
@@ -104,7 +103,6 @@ const TrustedCustomers = ({ isMobile }) => {
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
-								borderRadius:"4px"
 							}}
 						>
 							<Typography variant="subtitle1" sx={{ color: "white" }}>
@@ -121,7 +119,81 @@ const TrustedCustomers = ({ isMobile }) => {
 							/>
 							<Typography
 								variant="subtitle2"
-								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
+								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
+							>
+								" I was pleasantly surprised by the outstanding performance of
+								this travel agency website. Their booking process was incredibly
+								user-friendly, and their team of travel agents demonstrated
+								exceptional expertise and provided unwavering support and
+								guidance throughout my journey. "
+							</Typography>
+						</Paper>
+					</Paper>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					sm={12}
+					md={4}
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Paper
+						elevation={7}
+						sx={{
+							width: "260px",
+							minHeight: "320px",
+							background: "#8accf2",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							position: "relative",
+						}}
+					>
+						<Avatar
+							alt="rater"
+							sx={{
+								width: "75px",
+								height: "75px",
+								position: "absolute",
+								top: 20,
+								zIndex: 10,
+							}}
+						/>
+						<Paper
+							sx={{
+								background: "#17a5f7",
+								width: "200px",
+								minHeight: "210px",
+								position: "absolute",
+								bottom: 15,
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center",
+								alignItems: "center",
+								gap: "5px",
+								p: "10px",
+							}}
+						>
+							<Typography variant="subtitle1" sx={{ color: "white" }}>
+								Naveed
+							</Typography>
+							<Divider
+								sx={{ width: "90%", background: "#fec408", height: "2px" }}
+							/>
+							<Rating
+								name="rating"
+								value={5}
+								readOnly
+								sx={{ color: "#ffd006" }}
+							/>
+							<Typography
+								variant="subtitle2"
+								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
 							>
 								" This travel agency website exceeded my expectations with their
 								easy booking process and expert travel agents who provided
@@ -144,15 +216,14 @@ const TrustedCustomers = ({ isMobile }) => {
 					<Paper
 						elevation={7}
 						sx={{
-							width: "360px",
-							height: "280px",
+							width: "260px",
+							minHeight: "320px",
 							background: "#8accf2",
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
 							position: "relative",
-							borderRadius:"6px"
 						}}
 					>
 						<Avatar
@@ -168,8 +239,8 @@ const TrustedCustomers = ({ isMobile }) => {
 						<Paper
 							sx={{
 								background: "#17a5f7",
-								width: "300px",
-								height: "170px",
+								width: "200px",
+								minHeight: "210px",
 								position: "absolute",
 								bottom: 15,
 								display: "flex",
@@ -178,7 +249,6 @@ const TrustedCustomers = ({ isMobile }) => {
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
-								borderRadius:"4px"
 							}}
 						>
 							<Typography variant="subtitle1" sx={{ color: "white" }}>
@@ -195,85 +265,13 @@ const TrustedCustomers = ({ isMobile }) => {
 							/>
 							<Typography
 								variant="subtitle2"
-								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
+								sx={{ fontSize: "9px", textAlign: "center", color: "white" }}
 							>
-								" This travel agency website exceeded my expectations with their
-								easy booking process and expert travel agents who provided
-								exceptional support and guidance. "
-							</Typography>
-						</Paper>
-					</Paper>
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					sm={12}
-					md={4}
-					sx={{
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Paper
-						elevation={7}
-						sx={{
-							width: "360px",
-							height: "280px",
-							background: "#8accf2",
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							position: "relative",
-							borderRadius:"6px"
-						}}
-					>
-						<Avatar
-							alt="rater"
-							sx={{
-								width: "75px",
-								height: "75px",
-								position: "absolute",
-								top: 20,
-								zIndex: 10,
-							}}
-						/>
-						<Paper
-							sx={{
-								background: "#17a5f7",
-								width: "300px",
-								height: "170px",
-								position: "absolute",
-								bottom: 15,
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								alignItems: "center",
-								gap: "5px",
-								p: "10px",
-								borderRadius:"4px"
-							}}
-						>
-							<Typography variant="subtitle1" sx={{ color: "white" }}>
-								Naveed
-							</Typography>
-							<Divider
-								sx={{ width: "90%", background: "#fec408", height: "2px" }}
-							/>
-							<Rating
-								name="rating"
-								value={5}
-								readOnly
-								sx={{ color: "#ffd006" }}
-							/>
-							<Typography
-								variant="subtitle2"
-								sx={{ fontSize: "12px", textAlign: "center", color: "white" }}
-							>
-								" This travel agency website exceeded my expectations with their
-								easy booking process and expert travel agents who provided
-								exceptional support and guidance. "
+								" I was thoroughly impressed by the remarkable performance of
+								this travel agency website. Their booking process surpassed all
+								my expectations, and their team of expert travel agents went
+								above and beyond to deliver outstanding support and guidance,
+								leaving me incredibly satisfied with my experience."
 							</Typography>
 						</Paper>
 					</Paper>
