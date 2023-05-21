@@ -89,6 +89,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								top: 20,
 								zIndex: 10,
 							}}
+							src="/images/profile-1.jpg"
 						/>
 						<Paper
 							sx={{
@@ -99,14 +100,17 @@ const TrustedCustomers = ({ isMobile }) => {
 								bottom: 15,
 								display: "flex",
 								flexDirection: "column",
-								justifyContent: "center",
+								justifyContent: "flex-start",
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
 							}}
 						>
-							<Typography variant="subtitle1" sx={{ color: "white" }}>
-								Naveed
+							<Typography
+								variant="subtitle1"
+								sx={{ color: "white", mt: "10px" }}
+							>
+								James Burton
 							</Typography>
 							<Divider
 								sx={{ width: "90%", background: "#fec408", height: "2px" }}
@@ -163,6 +167,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								top: 20,
 								zIndex: 10,
 							}}
+							src="/images/profile-2.jpg"
 						/>
 						<Paper
 							sx={{
@@ -173,14 +178,17 @@ const TrustedCustomers = ({ isMobile }) => {
 								bottom: 15,
 								display: "flex",
 								flexDirection: "column",
-								justifyContent: "center",
+								justifyContent: "flex-start",
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
 							}}
 						>
-							<Typography variant="subtitle1" sx={{ color: "white" }}>
-								Naveed
+							<Typography
+								variant="subtitle1"
+								sx={{ color: "white", mt: "10px" }}
+							>
+								George Robinson
 							</Typography>
 							<Divider
 								sx={{ width: "90%", background: "#fec408", height: "2px" }}
@@ -235,6 +243,7 @@ const TrustedCustomers = ({ isMobile }) => {
 								top: 20,
 								zIndex: 10,
 							}}
+							src="/images/profile-3.jpg"
 						/>
 						<Paper
 							sx={{
@@ -245,14 +254,17 @@ const TrustedCustomers = ({ isMobile }) => {
 								bottom: 15,
 								display: "flex",
 								flexDirection: "column",
-								justifyContent: "center",
+								justifyContent: "flex-start",
 								alignItems: "center",
 								gap: "5px",
 								p: "10px",
 							}}
 						>
-							<Typography variant="subtitle1" sx={{ color: "white" }}>
-								Naveed
+							<Typography
+								variant="subtitle1"
+								sx={{ color: "white", mt: "10px" }}
+							>
+								Alex Walker
 							</Typography>
 							<Divider
 								sx={{ width: "90%", background: "#fec408", height: "2px" }}
