@@ -24,11 +24,7 @@ function TabPanel(props) {
 			aria-labelledby={`simple-tab-${index}`}
 			{...other}
 		>
-			{value === index && (
-				<Box sx={{ p: 3 }}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
+			{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
 		</div>
 	);
 }
@@ -78,7 +74,7 @@ const RejForm = ({ isMobile }) => {
 			>
 				<Box
 					sx={{
-						width: isMobile ? "85vw" : "85vw",
+						width: isMobile ? "90vw" : "85vw",
 						height: "45px",
 						backgroundColor: "rgb(0,0,0)",
 						opacity: 0.7,
@@ -110,7 +106,7 @@ const RejForm = ({ isMobile }) => {
 						flexDirection: "column",
 						justifyContent: "flex-start",
 						alignItems: "center",
-						width: isMobile ? "85vw" : "85vw",
+						width: isMobile ? "90vw" : "85vw",
 						overflowX: "hidden",
 						borderRadius: "10px",
 						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",
