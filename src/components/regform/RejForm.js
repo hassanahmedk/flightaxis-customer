@@ -78,7 +78,7 @@ const RejForm = ({ isMobile }) => {
 			>
 				<Box
 					sx={{
-						width: isMobile ? "80vw" : "85vw",
+						width: isMobile ? "85vw" : "85vw",
 						height: "45px",
 						backgroundColor: "rgb(0,0,0)",
 						opacity: 0.7,
@@ -110,7 +110,7 @@ const RejForm = ({ isMobile }) => {
 						flexDirection: "column",
 						justifyContent: "flex-start",
 						alignItems: "center",
-						width: isMobile ? "80vw" : "85vw",
+						width: isMobile ? "85vw" : "85vw",
 						overflowX: "hidden",
 						borderRadius: "10px",
 						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",

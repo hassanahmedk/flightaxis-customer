@@ -11,8 +11,9 @@ import {
 	Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import GetAQuoteDialog from "../getaquotedialog/GetAQuoteDialog";
+import { useEffect } from "react";
 
 const Header = ({ isMobile }) => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
@@ -31,6 +32,16 @@ const Header = ({ isMobile }) => {
 		setOpen(true);
 	};
 
+	const [activePage, setActivePage] = useState("#fff");
+
+	const location = useLocation();
+
+	console.log(location);
+
+	useEffect(() => {
+		setActivePage(location.pathname);
+	}, [location.pathname]);
+
 	return (
 		<AppBar
 			position="static"
@@ -45,7 +56,7 @@ const Header = ({ isMobile }) => {
 					height: isMobile ? "17vh" : "8vh",
 					width: "100%",
 					background: "rgb(0,0,0)",
-					color:"#Fff",
+					color: "#Fff",
 					display: "flex",
 					flexDirection: isMobile ? "column" : "row",
 					justifyContent: isMobile ? "center" : "space-around",
@@ -59,13 +70,16 @@ const Header = ({ isMobile }) => {
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
-						color:"#fff"
+						color: "#fff",
 					}}
 				>
 					<img src="/images/message-icon.png" alt="message" width="25vw" />
 					&nbsp; &nbsp; Support@flightaxis.co.uk
 				</Typography>
-				<Typography variant="subtitle1" sx={{ fontFamily: "MV Boli", color:"#fff", }}>
+				<Typography
+					variant="subtitle1"
+					sx={{ fontFamily: "MV Boli", color: "#fff" }}
+				>
 					We are open 24 Hours a Day, 7 Days a weak
 				</Typography>
 				<Typography
@@ -195,7 +209,7 @@ const Header = ({ isMobile }) => {
 						</Menu>
 					</Box>
 
-					{/** Mobile View of Header **/}
+					{/** Desktop View of Header **/}
 
 					<Typography
 						variant="h6"
@@ -247,9 +261,17 @@ const Header = ({ isMobile }) => {
 									textDecoration: "none",
 								}}
 							>
-								<Link style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
-									opacity:0.9
-								} }} to="/">
+								<Link
+									style={{
+										textDecoration: "none",
+										color: activePage === "/" ? "#0f6bd7" : "#fff",
+										fontFamily: "Poppins",
+										"&:hover": {
+											opacity: 0.9,
+										},
+									}}
+									to="/"
+								>
 									Home
 								</Link>
 							</Typography>
@@ -267,9 +289,14 @@ const Header = ({ isMobile }) => {
 							>
 								<Link
 									to="/contact-us"
-									style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
-										opacity:0.9
-									} }}
+									style={{
+										textDecoration: "none",
+										color: activePage === "/contact-us" ? "#0f6bd7" : "#fff",
+										fontFamily: "Poppins",
+										"&:hover": {
+											opacity: 0.9,
+										},
+									}}
 								>
 									Contact Us
 								</Link>
@@ -287,15 +314,24 @@ const Header = ({ isMobile }) => {
 								}}
 							>
 								<Link
-									style={{ textDecoration: "none", color: "#fff", fontFamily:"Poppins", "&:hover":{
-										opacity:0.9
-									} }}
+									style={{
+										textDecoration: "none",
+										color: activePage === "/about-us" ? "#0f6bd7" : "#fff",
+										fontFamily: "Poppins",
+										"&:hover": {
+											opacity: 0.9,
+										},
+									}}
 									to="/about-us"
 								>
 									About Us
 								</Link>
 							</Typography>
-							<Button variant="contained" onClick={openQuote} sx={{borderRadius:"5px"}}>
+							<Button
+								variant="contained"
+								onClick={openQuote}
+								sx={{ borderRadius: "5px" }}
+							>
 								Get a Quote
 							</Button>
 						</Box>

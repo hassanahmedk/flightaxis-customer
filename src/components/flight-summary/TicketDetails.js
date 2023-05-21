@@ -127,7 +127,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Airline</Typography>
+							<Typography variant="p">Airline: </Typography>
 							<Typography variant="p">{details.airline}</Typography>
 						</Stack>
 						<Stack
@@ -136,7 +136,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Travel From</Typography>
+							<Typography variant="p">Travel From: </Typography>
 							<Typography
 								variant="p"
 								fontFamily="Bahnschrift"
@@ -151,7 +151,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Travel To</Typography>
+							<Typography variant="p">Travel To: </Typography>
 							<Typography
 								variant="p"
 								fontFamily="Bahnschrift"
@@ -166,7 +166,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Departure Date</Typography>
+							<Typography variant="p">Departure Date: </Typography>
 							<Typography variant="p">{details.departing_on}</Typography>
 						</Stack>
 						<Stack
@@ -175,8 +175,10 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Return Date</Typography>
-							<Typography variant="p">{details.returning_on}</Typography>
+							<Typography variant="p">Return Date: </Typography>
+							<Typography variant="p">
+								{details.returning_on ? details.returning_on : "N/A"}
+							</Typography>
 						</Stack>
 						<Stack
 							direction="row"
@@ -184,7 +186,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Trip Type</Typography>
+							<Typography variant="p">Trip Type: </Typography>
 							<Typography variant="p">
 								{details.returning_on ? "Round Trip" : "One Way"}
 							</Typography>
@@ -195,7 +197,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							alignItems="center"
 							sx={{ width: "100%" }}
 						>
-							<Typography variant="p">Fare Amount</Typography>
+							<Typography variant="p">Fare Amount: </Typography>
 							<Typography variant="p">$ {details.fare}</Typography>
 						</Stack>
 					</Stack>

@@ -69,11 +69,16 @@ const Round = ({ isMobile }) => {
 						label="Leaving from"
 						width="100%"
 						size="small"
+						isMobile={isMobile}
 					/>
 				</Stack>
 			</Grid>
 			<Grid item xs={12} sm={12} md={4}>
-				<Stack direction={"column"} justifyContent={"flex-start"}>
+				<Stack
+					direction={"column"}
+					justifyContent={"flex-start"}
+					sx={{ width: "100%" }}
+				>
 					<Typography variant="h6" sx={{ fontWeight: "bold" }}>
 						To
 					</Typography>
@@ -83,6 +88,7 @@ const Round = ({ isMobile }) => {
 						label="Going to"
 						width="100%"
 						size="small"
+						isMobile={isMobile}
 					/>
 				</Stack>
 			</Grid>
@@ -91,6 +97,7 @@ const Round = ({ isMobile }) => {
 					direction={isMobile ? "column" : "row"}
 					justifyContent="flex-start"
 					//alignItems="center"
+					sx={{ width: "100%" }}
 				>
 					<Stack
 						direction={"column"}
@@ -331,7 +338,7 @@ const Round = ({ isMobile }) => {
 				<Stack
 					direction={"column"}
 					justifyContent={"flex-end"}
-					alignItems={"flex-start"}
+					alignItems={"stretch"}
 					sx={{ height: "100%" }}
 				>
 					<Button

@@ -6,7 +6,7 @@ const Plane = ({ isMobile }) => {
 		<Box
 			maxWidth="xl"
 			sx={{
-				backgroundImage: "url('/images/plane-runway.png')",
+				backgroundImage: "url('/images/plane-runway.jpg')",
 				backgroungSize: isMobile ? "20% 20%" : "100% 100%",
 				backgroundRepeat: "no-repeat",
 				backgroundAttachment: "fixed",

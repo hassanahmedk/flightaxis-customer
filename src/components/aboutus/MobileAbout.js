@@ -98,11 +98,11 @@ const MobileAbout = () => {
 					</Typography>
 					<Typography variant="subtitle1" textAlign="center">
 						We want nothing more than to share their thinking, when you discover
-						the world in one place ath the same time. We offer you a wide
-						variety of activities, including a variety of activities and tours
-						in over 250 locations around the globe. To enjoy, simply browse
-						through our cities and towns, in order to see what is available, in
-						order to enhace your travel experience.
+						the world in one place at the same time. We offer you a wide variety
+						of activities, including a variety of activities and tours in over
+						250 locations around the globe. To enjoy, simply browse through our
+						cities and towns, in order to see what is available, in order to
+						enhace your travel experience.
 					</Typography>
 				</Stack>
 				<Paper

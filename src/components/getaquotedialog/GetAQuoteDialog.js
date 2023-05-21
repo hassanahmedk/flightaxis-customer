@@ -13,13 +13,42 @@ import React, { useState } from "react";
 import AutocompleteAirports from "../regform/AutocompleteAirports";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { sendQuote } from "../../assets/api/api";
-
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 	/* const handleClickOpen = () => {
 		setOpen(true);
 	}; */
+
+	const date = new Date();
+
+	const formik = useFormik({
+		initialValues: {
+			name: "",
+			customer_email: "",
+			customer_phone: "",
+			total_fare: "",
+			side_notes: "",
+			no_of_passengers: "",
+			departing_on: "",
+			returning_on: "",
+		},
+		validationSchema: Yup.object({
+			name: Yup.string().required("Required"),
+			customer_email: Yup.string().email("Invalid Email").required("Required"),
+			customer_phone: Yup.number().moreThan(0, "No negative numbers allowed!"),
+			total_fare: "",
+			side_notes: "",
+			no_of_passengers: Yup.number().min(1, "At least 1 passenger!"),
+			departing_on: Yup.date().min(date, "Can't book a flight for yesterday!"),
+			returning_on: Yup.date().min(date, "Can't return yesterday!"),
+		}),
+		onSubmit: () => {
+			handleBookingSubmit();
+		},
+	});
 
 	const [formData, setFormData] = useState({
 		name: "",
