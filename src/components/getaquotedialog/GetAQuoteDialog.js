@@ -26,8 +26,6 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 		name:"",
 		customer_email:"",
 		customer_phone:"",
-		total_fare:"",
-		side_notes: "",
 		no_of_passengers:"",
 		departing_on:"",
 		returning_on:""
@@ -64,12 +62,16 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 	  };
 
 	const handleBookingSubmit = () => {
+		if (Object.values(formData).some((value) => value === "")) {
+			alert("Please fill in all the fields");
+		  } else {
 		sendQuote({
 			...formData,
 
 		})
 		.then((result)=>setBooked(true))
 		.catch((error)=>alert("An error occured, try again"))
+		}
 	}
 
 	return (
@@ -96,8 +98,19 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 					display:"flex",
 					 flexDirection:"column",
 					 alignItems:"center"}}>
+						<IconButton
+						onClick={handleClose}
+						sx={{
+							position: "absolute",
+							top: 0,
+							right: 0,
+						}}
+					>
+						<CancelRoundedIcon sx={{ color: "#d2d4d3" }} />
+					</IconButton>
 				<h2> 
-					Booking request recieved
+					
+					Booking request received
 					
 				</h2>	
 					<p>We'll get back to you on your email or phone</p>
@@ -164,7 +177,6 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 							<Typography variant="subtitle2">Phone number</Typography>
 							<TextField
 								placeholder="Phone number"
-								type="number"
 								id="outlined-start-adornment"
 								size="small"
 								sx={{

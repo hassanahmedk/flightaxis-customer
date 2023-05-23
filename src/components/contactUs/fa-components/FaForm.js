@@ -2,38 +2,43 @@ import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { sendMessage } from "../../../assets/api/api";
 
-const FaForm = ({ isMobile }) => {
+const FaForm = ({ isMobile, showSuccess }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-    date: "",
+    date: " ",
   });
 
   const handleSubmit = () => {
-    setFormData((prev) => {
-      return {
-        ...prev,
-        date: new Date()
-          .toLocaleString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            month: "2-digit",
-            day: "2-digit",
-            year: "numeric",
-          })
-          .replace(",", " -"),
-      };
-    });
-    sendMessage(formData)
-      .then((result) => {
-        console.log("Message sent");
-      })
-      .catch((error) => {
-        console.log("An error occured");
-        console.log(error);
+    if (Object.values(formData).some((value) => value === "")) {
+      alert("Please fill in all the fields");
+    } else {
+      setFormData((prev) => {
+        return {
+          ...prev,
+          date: new Date()
+            .toLocaleString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+              month: "2-digit",
+              day: "2-digit",
+              year: "numeric",
+            })
+            .replace(",", " -"),
+        };
       });
+      sendMessage(formData)
+        .then((result) => {
+          console.log("Message sent");
+          showSuccess();
+        })
+        .catch((error) => {
+          console.log("An error occured");
+          console.log(error);
+        });
+    }
   };
 
   const handleFormChange = (event) => {
@@ -99,7 +104,6 @@ const FaForm = ({ isMobile }) => {
               value={formData.phone}
               id="phone"
               label="Phone Number"
-              type="number"
               variant="outlined"
               size="small"
               sx={{ width: "100%" }}

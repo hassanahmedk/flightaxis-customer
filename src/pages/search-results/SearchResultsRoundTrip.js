@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import GetAQuoteDialog from "../../components/getaquotedialog/GetAQuoteDialog";
@@ -10,6 +10,24 @@ import GetAQuote from "../../components/getaquotedialog/GetAQuote";
 const SearchResultsRoundTrip = ({ isMobile }) => {
   const navigate = useNavigate();
   const { state } = useLocation();
+
+  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+
+  const handleBackButtonClick = () => {
+    const desiredUrl = "/";
+
+    if (currentUrl !== desiredUrl) {
+      setCurrentUrl(desiredUrl);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("popstate", handleBackButtonClick);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButtonClick);
+    };
+  }, []);
+  
 
   const months = [
     "January",
@@ -194,11 +212,8 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
                         if (fare.month === departing_month) {
                           departing_fare = fare.leaving_fare;
                         }
-                        if (fare.month === returning_month) {
-                          returning_fare = fare.returning_fare;
-                        }
                       })}
-                      $ {parseInt(departing_fare) + parseInt(returning_fare)}
+                      $ {parseFloat(departing_fare)*2}
                     </Typography>
                   </Stack>
                   <Stack
@@ -224,7 +239,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
                             going_to: flight.going_to,
                             departing_on: departing_on,
                             returning_on: returning_on,
-                            fare: parseInt(departing_fare) + parseInt(returning_fare),
+                            fare: parseFloat(departing_fare)*2,     
                             adults: state.formData.adults,
                             kids: state.formData.kids,
                             infants: state.formData.infants,

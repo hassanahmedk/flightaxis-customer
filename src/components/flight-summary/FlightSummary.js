@@ -50,7 +50,7 @@ const FlightSummary = ({ isMobile, details }) => {
 					 flexDirection:"column",
 					 alignItems:"center"}}>
 				<h2> 
-					Booking request recieved
+					Booking request received
 					
 				</h2>	
 					<p>We'll get back to you on your email or phone</p>

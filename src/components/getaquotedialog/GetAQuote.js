@@ -2,19 +2,17 @@ import React, { useState } from 'react'
 import {
 	Box,
 	Button,
-	Dialog,
 	DialogContent,
 	FormControl,
-	IconButton,
 	Stack,
 	TextField,
 	Typography,
 } from "@mui/material";
 import AutocompleteAirports from "../regform/AutocompleteAirports";
-import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { sendQuote } from "../../assets/api/api";
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function GetAQuote() {
@@ -32,9 +30,6 @@ function GetAQuote() {
 	const [booked, setBooked] = useState(false);
 
 
-	const handleClose = () => {
-		setBooked(false)
-	};
 
 	const handleFormChange = (event) => {
 		const {name, value} = event.target;
@@ -59,6 +54,9 @@ function GetAQuote() {
 	  };
 
 	const handleBookingSubmit = () => {
+        if (Object.values(formData).some((value) => value === "")) {
+			alert("Please fill in all the fields");
+		  } else {
 		sendQuote({
 			...formData,
 
@@ -66,6 +64,7 @@ function GetAQuote() {
 		.then((result)=>setBooked(true))
 		.catch((error)=>alert("An error occured, try again"))
 	}
+}
   return (
     <div><DialogContent
     sx={{
@@ -94,6 +93,7 @@ function GetAQuote() {
         
     </h2>	
         <p>We'll get back to you on your email or phone</p>
+        <CloseIcon />
     </div>
     </div>
     :
@@ -147,7 +147,6 @@ function GetAQuote() {
                 <Typography variant="subtitle2">Phone number</Typography>
                 <TextField
                     placeholder="Phone number"
-                    type="number"
                     id="outlined-start-adornment"
                     size="small"
                     sx={{
