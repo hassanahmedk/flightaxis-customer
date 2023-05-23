@@ -300,6 +300,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 				// <GetAQuoteDialog open={true} />
 			}
 		</Stack>
+		
 	);
 };
 
