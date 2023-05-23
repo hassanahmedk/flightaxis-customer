@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
 	Button,
 	FormControl,
@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import AutocompleteAirports from "./AutocompleteAirports";
 
 const OneWay = ({ isMobile }) => {
+	const inputRef = useRef();
+
 	const [formData, setFormData] = useState({
 		leaving_from: "",
 		going_to: "",
@@ -124,6 +126,9 @@ const OneWay = ({ isMobile }) => {
 							name="departing_on"
 							value={formData.departing_on}
 							onChange={handleFormChange}
+							inputRef={inputRef}
+      onClick={() => {
+        inputRef.current.showPicker()}}
 						/>
 					</Stack>
 				</Stack>

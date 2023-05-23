@@ -133,7 +133,7 @@ const FaForm = ({ isMobile }) => {
                 name="email"
                 value={formData.email}
                 id="email"
-                label="Email Address"
+                label="Email Address*"
                 type="email"
                 variant="outlined"
                 size="small"
@@ -146,11 +146,12 @@ const FaForm = ({ isMobile }) => {
                 name="phone"
                 value={formData.phone}
                 id="phone"
-                label="Phone Number"
+                label="Phone Number*"
                 variant="outlined"
                 size="small"
                 sx={{ width: "100%" }}
                 onChange={handleFormChange}
+				
               />
             </Grid>
             <Grid item xs={12}>
