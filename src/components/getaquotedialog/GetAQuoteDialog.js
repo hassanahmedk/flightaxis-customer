@@ -16,6 +16,7 @@ import { sendQuote } from "../../assets/api/api";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import CloseIcon from '@mui/icons-material/Close';
 
 const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 	/* const handleClickOpen = () => {
@@ -54,8 +55,6 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 		name: "",
 		customer_email: "",
 		customer_phone: "",
-		total_fare: "",
-		side_notes: "",
 		no_of_passengers: "",
 		departing_on: "",
 		returning_on: "",
@@ -89,11 +88,23 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 	};
 
 	const handleBookingSubmit = () => {
+		if (Object.values(formData).some((value) => value === "")) {
+			alert("Please fill in all the fields");
+		} else {
 		sendQuote({
 			...formData,
 		})
-			.then((result) => setBooked(true))
+			.then((result) => {
+				setBooked(true)
+				setFormData({name: "",
+				customer_email: "",
+				customer_phone: "",
+				no_of_passengers: "",
+				departing_on: "",
+				returning_on: "",})
+			})
 			.catch((error) => alert("An error occured, try again"));
+		}
 	};
 
 	return (
@@ -116,7 +127,18 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 							margin: "2rem 0",
 						}}
 					>
+						<IconButton
+							onClick={handleClose}
+							sx={{
+								position: "absolute",
+								top: -0,
+								right: -0,
+							}}
+						>
+							<CloseIcon  sx={{ color: "#d2d4d3" }} />
+						</IconButton>	
 						<CheckCircleIcon sx={{ fontSize: "5rem", color: "green" }} />
+					
 						<div
 							style={{
 								display: "flex",
@@ -190,7 +212,7 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 								<Typography variant="subtitle2">Phone number</Typography>
 								<TextField
 									placeholder="Phone number"
-									type="number"
+									
 									id="outlined-start-adornment"
 									size="small"
 									sx={{
@@ -230,7 +252,7 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 									placeholder="Number of Passengers"
 									id="outlined-start-adornment"
 									size="small"
-									type="number"
+									
 									sx={{
 										m: 1,
 										"& input::placeholder": {

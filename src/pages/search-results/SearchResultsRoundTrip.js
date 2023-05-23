@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
-import GetAQuoteDialog from "../../components/getaquotedialog/GetAQuoteDialog";
-import { FirstPageTwoTone } from "@mui/icons-material";
 import GetAQuote from "../../components/getaquotedialog/GetAQuote";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const SearchResultsRoundTrip = ({ isMobile }) => {
 	const navigate = useNavigate();
@@ -28,7 +27,6 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 	let returning_on = state.formData.returning_on.split("-");
 
 	let departing_fare = 0;
-	let returning_fare = 0;
 
 	let departing_month = months[parseInt(departing_on[1]) - parseInt(1)];
 	let returning_month = months[parseInt(returning_on[1]) - parseInt(1)];
@@ -45,7 +43,12 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 			alignItems="center"
 			spacing={2}
 			sx={{ width: "100%", background: "#f0f0e8", pt: "30px", pb: "30px" }}
-		>
+		>	
+		<a href="/" style={{display:"flex", alignItems:"center", textDecoration:"none", marginLeft:0}}>
+
+			<ArrowBackIcon  />
+			Back to search
+		</a>
 			<Stack
 				direction="row"
 				justifyContent={"center"}
@@ -223,7 +226,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 										<Button
 											variant="contained"
 											sx={{
-												background: "rgb(70,174,247)",
+											
 												background:
 													"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 												width: "100%",
