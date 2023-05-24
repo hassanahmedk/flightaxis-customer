@@ -45,7 +45,12 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				total_fare: details.fare,
 				trip_type,
 			})
-				.then((result) => setBooked())
+				.then((result) => {
+					setBooked()
+					console.log(result)
+					}
+				     
+				    )
 				.catch((error) => alert("An error occured, try again"));
 		}
 	};
