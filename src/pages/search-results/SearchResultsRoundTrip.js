@@ -243,6 +243,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 														adults: state.formData.adults,
 														kids: state.formData.kids,
 														infants: state.formData.infants,
+														no_of_passengers: parseInt(state.formData.adults) + parseInt(state.formData.kids) + parseInt(state.formData.infants)
 													},
 												});
 											}}
