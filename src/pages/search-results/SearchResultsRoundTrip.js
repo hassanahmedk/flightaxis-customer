@@ -212,7 +212,6 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 												if (fare.month === departing_month) {
 													departing_fare = fare.leaving_fare;
 												}
-												return fare;
 											})}
 											$ {parseFloat(departing_fare)*2}
 										</Typography>

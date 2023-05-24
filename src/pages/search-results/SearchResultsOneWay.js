@@ -160,7 +160,6 @@ const SearchResultsOneWay = ({ isMobile }) => {
 												if (fare.month === departing_month) {
 													departing_fare = fare.leaving_fare;
 												}
-												return fare;
 											})}
 											$ {parseInt(departing_fare)}
 										</Typography>
