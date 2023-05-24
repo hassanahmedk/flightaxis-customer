@@ -212,6 +212,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 												if (fare.month === departing_month) {
 													departing_fare = fare.leaving_fare;
 												}
+												return fare;
 											})}
 											$ {parseFloat(departing_fare)*2}
 										</Typography>
@@ -274,7 +275,6 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 										<Button
 											variant="contained"
 											sx={{
-												background: "rgb(70,174,247)",
 												background:
 													"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 												width: "100%",

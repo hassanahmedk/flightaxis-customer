@@ -38,18 +38,18 @@ function AutocompleteAirports(props) {
 				sx={
 					props.isMobile && props.width
 						? { width: 230, m: 1 }
-						: { width: "100%", m: 1 }
+						: { width: "50%", m: 1 }
 				}
 				//sx={{ width: props.width, mr: 1 }}
 				onChange={(event, value) => props.setValue(props.name, value)}
 				noOptionsText={optionsText}
 				label=" "
+				value="Lorem ipsum sit amet Lorem ipsum sit  Lorem ipsum sit"
 				inputProps={{ maxLength: 5 }}
 				renderInput={(params) => (
 					<TextField
 						{...params}
 						label={props.label}
-						placeholder="test"
 						size={props.size}
 						onChange={handleAirportsChange}
 					/>
