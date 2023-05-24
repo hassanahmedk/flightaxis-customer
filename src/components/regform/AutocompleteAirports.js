@@ -44,7 +44,6 @@ function AutocompleteAirports(props) {
 				onChange={(event, value) => props.setValue(props.name, value)}
 				noOptionsText={optionsText}
 				label=" "
-				value="Lorem ipsum sit amet Lorem ipsum sit  Lorem ipsum sit"
 				inputProps={{ maxLength: 5 }}
 				renderInput={(params) => (
 					<TextField
