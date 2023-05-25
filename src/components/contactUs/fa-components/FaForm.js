@@ -19,7 +19,15 @@ const FaForm = ({ isMobile }) => {
     email: "",
     phone: "",
     message: "",
-    date: " ",
+    date: new Date()
+    .toLocaleString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    })
+    .replace(",", " -"),
   });
 
   const [booked, setBooked] = useState(false);
@@ -28,22 +36,10 @@ const FaForm = ({ isMobile }) => {
     if (Object.values(formData).some((value) => value === "")) {
       alert("Please fill in all the fields");
     } else {
-      setFormData((prev) => {
-        return {
-          ...prev,
-          date: new Date()
-            .toLocaleString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-              month: "2-digit",
-              day: "2-digit",
-              year: "numeric",
-            })
-            .replace(",", " -"),
-        };
-      });
+      
       sendMessage(formData)
         .then((result) => {
+          console.log(formData)
           setBooked(true);
         })
         .catch((error) => {
