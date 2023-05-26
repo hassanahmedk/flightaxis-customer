@@ -19,6 +19,7 @@ const TicketDetails = ({ isMobile, details }) => {
 				justifyContent="center"
 				alignItems="center"
 				spacing={5}
+				sx={{ background: "#f0f0e8", p: "20px", borderRadius: "10px" }}
 			>
 				<Stack
 					direction={isMobile ? "column" : "row"}
