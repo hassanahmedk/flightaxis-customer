@@ -118,16 +118,19 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 				}}
 			>
 				{booked ? (
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "center",
-							gap: "1rem",
-							margin: "2rem 0",
-						}}
-					>
-						<IconButton
+					        <div
+							style={{
+							  display: "flex",
+							  flexDirection: "column",
+							  alignItems: "center",
+							  gap: "1rem",
+							  width: "100%",
+							  margin: "2rem 0",
+							  justifyContent: "center",
+							  textAlign: "text",
+							}}
+						  >
+							<IconButton
 							onClick={handleClose}
 							sx={{
 								position: "absolute",
@@ -135,21 +138,25 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 								right: -0,
 							}}
 						>
-							<CloseIcon  sx={{ color: "#d2d4d3" }} />
-						</IconButton>	
-						<CheckCircleIcon sx={{ fontSize: "5rem", color: "green" }} />
-					
-						<div
-							style={{
+							<CancelRoundedIcon sx={{ color: "#d2d4d3" }} />
+						</IconButton>
+
+							<CheckCircleIcon sx={{ fontSize: "5rem", color: "green" }} />
+				  
+							<div
+							  style={{
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
-							}}
-						>
-							<h2>Booking request recieved</h2>
-							<p>We'll get back to you on your email or phone</p>
-						</div>
-					</div>
+								justifyContent: "center",
+								textAlign: "center",
+								margin:"1rem"
+							  }}
+							>
+							  <h2>Thank you</h2>
+							  <p>One of our customer representative will get in touch with you shortly</p>
+							  </div>
+						  </div>
 				) : (
 					<Stack
 						direction="column"

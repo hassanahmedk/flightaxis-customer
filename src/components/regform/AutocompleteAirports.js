@@ -31,30 +31,30 @@ function AutocompleteAirports(props) {
 		}
 	}
 	return (
-		<FormControl fullWidth sx={{overflow:"none"}}>
-			<Autocomplete
-				disablePortal={true}
-				options={searchedAirports}
-				sx={
-					props.isMobile && props.width
-						? { width: 230, m: 1 }
-						: { width: "100%", m: 1 }
-				}
-				//sx={{ width: props.width, mr: 1 }}
-				onChange={(event, value) => props.setValue(props.name, value)}
-				noOptionsText={optionsText}
-				label=" "
-				inputProps={{ maxLength: 5 }}
-				renderInput={(params) => (
-					<TextField
-						{...params}
-						label={props.label}
-						size={props.size}
-						onChange={handleAirportsChange}
-					/>
-				)}
-			/>
-		</FormControl>
+		<FormControl fullWidth sx={{ overflow: "none" }}>
+  <Autocomplete
+    disablePortal={true}
+    options={searchedAirports}
+    sx={
+      props.isMobile && props.width
+        ? { width: "94%", m: 1 }
+        : { width: "100%", m: 1 }
+    }
+    onChange={(event, value) => props.setValue(props.name, value)}
+    noOptionsText={optionsText}
+    label=" "
+    inputProps={{ maxLength: 5, style: { fontSize: "14px" } }}
+    renderInput={(params) => (
+      <TextField
+        {...params}
+        label={props.label}
+        size={props.size}
+        onChange={handleAirportsChange}
+        sx={{}} // Add this line to constrain the width of the input field
+      />
+    )}
+  />
+</FormControl>
 	);
 }
 

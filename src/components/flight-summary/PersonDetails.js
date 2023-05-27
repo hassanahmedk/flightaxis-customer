@@ -186,6 +186,8 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 							"&:hover": {
 								borderColor: "blue",
 							},
+							width:isMobile ? "16.5rem" : "",
+							marginLeft:isMobile ? "-0.8rem" : "",
 						},
 					}}
 					name="side_notes"

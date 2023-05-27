@@ -68,9 +68,9 @@ const FaForm = ({ isMobile }) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "1rem",
+            gap: "",
             width: "100%",
-            margin: "2rem 0",
+            height:"100%",
             justifyContent: "center",
             textAlign: "text",
           }}
@@ -87,9 +87,9 @@ const FaForm = ({ isMobile }) => {
 			  margin:"1rem"
             }}
           >
-            <h2>Booking request recieved</h2>
-            <p>We'll get back to you on your email or phone</p>
-          </div>
+            <h2>Thank you</h2>
+            <p>One of our customer representative will get in touch with you shortly</p>
+            </div>
         </div>
       ) : (
         <Stack
