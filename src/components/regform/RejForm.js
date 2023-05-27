@@ -107,7 +107,7 @@ const RejForm = ({ isMobile }) => {
 						justifyContent: "flex-start",
 						alignItems: "center",
 						width: isMobile ? "90vw" : "85vw",
-						overflowX: "hidden",
+						overflow: "hidden",
 						borderRadius: "10px",
 						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",
 						background: "#f0f0e8",
@@ -142,7 +142,6 @@ const RejForm = ({ isMobile }) => {
 								{...a11yProps(0)}
 								sx={{
 									"&.Mui-selected": {
-										background: "rgb(70,174,247)",
 										background:
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
@@ -158,7 +157,6 @@ const RejForm = ({ isMobile }) => {
 								{...a11yProps(1)}
 								sx={{
 									"&.Mui-selected": {
-										background: "rgb(70,174,247)",
 										background:
 											"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 

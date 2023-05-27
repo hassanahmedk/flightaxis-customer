@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 import {
-  Button,
-  FormControl,
-  Grid,
-  MenuItem,
-  Select,
-  Stack,
-  TextField,
-  Typography,
+	Button,
+	FormControl,
+	Grid,
+	MenuItem,
+	Select,
+	Stack,
+	TextField,
+	Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AutocompleteAirports from "./AutocompleteAirports";
@@ -16,44 +16,44 @@ const Round = ({ isMobile }) => {
 	const inputRef = useRef(null);
 	const inputRef2 = useRef(null);
 
-  const [formData, setFormData] = useState({
-    leaving_from: "",
-    going_to: "",
-    departing_on: "",
-    returning_on: "",
-    adults: "1",
-    kids: "0",
-    infants: "0",
-  });
+	const [formData, setFormData] = useState({
+		leaving_from: "",
+		going_to: "",
+		departing_on: "",
+		returning_on: "",
+		adults: "1",
+		kids: "0",
+		infants: "0",
+	});
 
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const goToSearch = () => {
-    if (Object.values(formData).some((value) => value === "")) {
-      alert("Please fill in all the fields");
-    } else {
-      navigate("/flights-loader", { state: { formData: formData } });
-    }
-  };
+	const goToSearch = () => {
+		if (Object.values(formData).some((value) => value === "")) {
+			alert("Please fill in all the fields");
+		} else {
+			navigate("/flights-loader", { state: { formData: formData } });
+		}
+	};
 
-  const handleFormChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
-  const handleAirportChange = (name, value) => {
-    console.log(name);
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
+	const handleFormChange = (event) => {
+		const { name, value } = event.target;
+		setFormData((prev) => {
+			return {
+				...prev,
+				[name]: value,
+			};
+		});
+	};
+	const handleAirportChange = (name, value) => {
+		console.log(name);
+		setFormData((prev) => {
+			return {
+				...prev,
+				[name]: value,
+			};
+		});
+	};
 
   return (
     <Grid container spacing={1}>
@@ -358,17 +358,17 @@ const Round = ({ isMobile }) => {
               background:
                 "radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
-              color: "#FFF",
-              mb: "10px",
-            }}
-            onClick={goToSearch}
-          >
-            Search For Best Flights
-          </Button>
-        </Stack>
-      </Grid>
-    </Grid>
-  );
+							color: "#FFF",
+							mb: "10px",
+						}}
+						onClick={goToSearch}
+					>
+						Search For Best Flights
+					</Button>
+				</Stack>
+			</Grid>
+		</Grid>
+	);
 };
 
 export default Round;

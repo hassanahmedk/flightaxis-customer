@@ -1,4 +1,3 @@
-
 import { Box, Typography, Stack, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import { sendBooking } from "../../assets/api/api";
@@ -46,11 +45,9 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				trip_type,
 			})
 				.then((result) => {
-					setBooked()
-					console.log(result)
-					}
-				     
-				    )
+					setBooked();
+					console.log(result);
+				})
 				.catch((error) => alert("An error occured, try again"));
 		}
 	};
@@ -71,7 +68,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
 			}}
 		>
-			<Typography variant="h4" textAlign="center">
+			<Typography variant="h4" textAlign="center" color="#fff">
 				Your Information
 			</Typography>
 			<Stack direction="column" alignItems="stretch">
@@ -84,7 +81,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					size="small"
 					InputProps={{
 						style: {
-							border: "2px solid #ffffff00",
+							border: "2px solid #fff",
 							"&:focus": {
 								borderColor: "blue",
 							},
@@ -116,7 +113,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					type="email"
 					InputProps={{
 						style: {
-							border: "2px solid #ffffff00",
+							border: "2px solid #fff",
 							"&:focus": {
 								borderColor: "blue",
 							},
@@ -147,7 +144,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					type="phone"
 					InputProps={{
 						style: {
-							border: "2px solid #ffffff00",
+							border: "2px solid #fff",
 							"&:focus": {
 								borderColor: "blue",
 							},
@@ -179,7 +176,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 					minRows={isMobile ? 6 : 7}
 					InputProps={{
 						style: {
-							border: "2px solid #ffffff00",
+							border: "2px solid #fff",
 							"&:focus": {
 								borderColor: "blue",
 							},
@@ -201,7 +198,7 @@ const PersonDetails = ({ details, isMobile, setBooked }) => {
 				sx={{ mt: isMobile ? 1 : 5 }}
 			>
 				<Typography
-					variant="p"
+					variant="h6"
 					fontFamily="Poppins"
 					sx={{ color: "#fff", fontSize: "1.2rem" }}
 				>

@@ -161,7 +161,7 @@ const SearchResultsOneWay = ({ isMobile }) => {
 													departing_fare = fare.leaving_fare;
 												}
 											})}
-											$ {parseInt(departing_fare)}
+											£ {parseInt(departing_fare)}
 										</Typography>
 									</Stack>
 									<Stack
@@ -190,7 +190,10 @@ const SearchResultsOneWay = ({ isMobile }) => {
 														adults: state.formData.adults,
 														kids: state.formData.kids,
 														infants: state.formData.infants,
-														no_of_passengers: parseInt(state.formData.adults) + parseInt(state.formData.kids) + parseInt(state.formData.infants)
+														no_of_passengers:
+															parseInt(state.formData.adults) +
+															parseInt(state.formData.kids) +
+															parseInt(state.formData.infants),
 													},
 												});
 											}}
