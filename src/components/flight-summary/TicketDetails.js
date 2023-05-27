@@ -199,7 +199,7 @@ const TicketDetails = ({ isMobile, details }) => {
 							sx={{ width: "100%" }}
 						>
 							<Typography variant="p">Fare Amount: </Typography>
-							<Typography variant="p">$ {details.fare}</Typography>
+							<Typography variant="p">£ {details.fare}</Typography>
 						</Stack>
 					</Stack>
 				</Stack>

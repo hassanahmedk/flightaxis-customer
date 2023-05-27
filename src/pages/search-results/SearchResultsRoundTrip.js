@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import GetAQuote from "../../components/getaquotedialog/GetAQuote";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const SearchResultsRoundTrip = ({ isMobile }) => {
 	const navigate = useNavigate();
@@ -43,12 +43,19 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 			alignItems="center"
 			spacing={2}
 			sx={{ width: "100%", background: "#f0f0e8", pt: "30px", pb: "30px" }}
-		>	
-		<a href="/" style={{display:"flex", alignItems:"center", textDecoration:"none", marginLeft:0}}>
-
-			<ArrowBackIcon  />
-			Back to search
-		</a>
+		>
+			<a
+				href="/"
+				style={{
+					display: "flex",
+					alignItems: "center",
+					textDecoration: "none",
+					marginLeft: 0,
+				}}
+			>
+				<ArrowBackIcon />
+				Back to search
+			</a>
 			<Stack
 				direction="row"
 				justifyContent={"center"}
@@ -213,7 +220,7 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 													departing_fare = fare.leaving_fare;
 												}
 											})}
-											$ {parseFloat(departing_fare)*2}
+											£ {parseFloat(departing_fare) * 2}
 										</Typography>
 									</Stack>
 									<Stack
@@ -226,7 +233,6 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 										<Button
 											variant="contained"
 											sx={{
-											
 												background:
 													"radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 												width: "100%",
@@ -239,11 +245,14 @@ const SearchResultsRoundTrip = ({ isMobile }) => {
 														going_to: flight.going_to,
 														departing_on: departing_on,
 														returning_on: returning_on,
-														fare:parseFloat(departing_fare)*2,
+														fare: parseFloat(departing_fare) * 2,
 														adults: state.formData.adults,
 														kids: state.formData.kids,
 														infants: state.formData.infants,
-														no_of_passengers: parseInt(state.formData.adults) + parseInt(state.formData.kids) + parseInt(state.formData.infants)
+														no_of_passengers:
+															parseInt(state.formData.adults) +
+															parseInt(state.formData.kids) +
+															parseInt(state.formData.infants),
 													},
 												});
 											}}
