@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import GetAQuote from "../../components/getaquotedialog/GetAQuote";
@@ -7,7 +7,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 const SearchResultsRoundTrip = ({ isMobile }) => {
 	const navigate = useNavigate();
 	const { state } = useLocation();
-
+	useEffect(()=>window.scrollTo(0, 0)
+	, [])
 	const months = [
 		"January",
 		"February",

@@ -105,6 +105,9 @@ const OneWay = ({ isMobile }) => {
 							id="outlined-start-adornment"
 							size="small"
 							type="date"
+							inputProps={{
+								min: new Date().toISOString().split('T')[0], // Set the minimum selectable date to today
+							  }}
 							sx={
 								isMobile
 									? {

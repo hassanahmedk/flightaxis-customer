@@ -1,11 +1,13 @@
 import { Box, Paper } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TicketDetails from "./TicketDetails";
 import PersonDetails from "./PersonDetails";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const FlightSummary = ({ isMobile, details }) => {
   const [booked, setBooked] = useState(false);
+  useEffect(()=>window.scrollTo(0, 0)
+  , [])
   return (
     <Box
       sx={{

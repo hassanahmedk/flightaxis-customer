@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import GetAQuote from "../../components/getaquotedialog/GetAQuote";
 
 const SearchResultsOneWay = ({ isMobile }) => {
 	const navigate = useNavigate();
-
+	useEffect(()=>window.scrollTo(0, 0)
+	, [])
 	const { state } = useLocation();
 
 	const months = [

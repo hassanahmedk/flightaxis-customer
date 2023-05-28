@@ -1,67 +1,67 @@
 import React, { useState, useRef } from "react";
 import {
-	Button,
-	FormControl,
-	Grid,
-	MenuItem,
-	Select,
-	Stack,
-	TextField,
-	Typography,
+  Button,
+  FormControl,
+  Grid,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+  Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AutocompleteAirports from "./AutocompleteAirports";
 
 const Round = ({ isMobile }) => {
-	const inputRef = useRef(null);
-	const inputRef2 = useRef(null);
+  const inputRef = useRef(null);
+  const inputRef2 = useRef(null);
 
-	const [formData, setFormData] = useState({
-		leaving_from: "",
-		going_to: "",
-		departing_on: "",
-		returning_on: "",
-		adults: "1",
-		kids: "0",
-		infants: "0",
-	});
+  const [formData, setFormData] = useState({
+    leaving_from: "",
+    going_to: "",
+    departing_on: "",
+    returning_on: "",
+    adults: "1",
+    kids: "0",
+    infants: "0",
+  });
 
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
-	const goToSearch = () => {
-		if (Object.values(formData).some((value) => value === "")) {
-			alert("Please fill in all the fields");
-		} else {
-			navigate("/flights-loader", { state: { formData: formData } });
-		}
-	};
+  const goToSearch = () => {
+    if (Object.values(formData).some((value) => value === "")) {
+      alert("Please fill in all the fields");
+    } else {
+      navigate("/flights-loader", { state: { formData: formData } });
+    }
+  };
 
-	const handleFormChange = (event) => {
-		const { name, value } = event.target;
-		setFormData((prev) => {
-			return {
-				...prev,
-				[name]: value,
-			};
-		});
-	};
-	const handleAirportChange = (name, value) => {
-		console.log(name);
-		setFormData((prev) => {
-			return {
-				...prev,
-				[name]: value,
-			};
-		});
-	};
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+  const handleAirportChange = (name, value) => {
+    console.log(name);
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={12} sm={12} md={4} >
+      <Grid item xs={12} sm={12} md={4}>
         <Stack
           direction={"column"}
           justifyContent={"center"}
-          sx={{ width: "100%"}}
+          sx={{ width: "100%" }}
         >
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
             From
@@ -114,6 +114,9 @@ const Round = ({ isMobile }) => {
               id="outlined-start-adornment"
               size="small"
               type="date"
+              inputProps={{
+                min: new Date().toISOString().split('T')[0], // Set the minimum selectable date to today
+              }}
               sx={
                 isMobile
                   ? {
@@ -136,9 +139,9 @@ const Round = ({ isMobile }) => {
               value={formData.departing_on}
               onChange={handleFormChange}
               inputRef={inputRef}
-      onClick={() => {
-        inputRef.current.showPicker()
-      }} 
+              onClick={() => {
+                inputRef.current.showPicker();
+              }}
             />
           </Stack>
           <Stack
@@ -153,6 +156,9 @@ const Round = ({ isMobile }) => {
               id="outlined-start-adornment"
               size="small"
               type="date"
+              inputProps={{
+                min: new Date().toISOString().split('T')[0], // Set the minimum selectable date to today
+              }}
               sx={
                 isMobile
                   ? {
@@ -174,9 +180,10 @@ const Round = ({ isMobile }) => {
               name="returning_on"
               value={formData.returning_on}
               onChange={handleFormChange}
-			  inputRef={inputRef2}
-     		 	onClick={() => {
-       			 inputRef2.current.showPicker()}}
+              inputRef={inputRef2}
+              onClick={() => {
+                inputRef2.current.showPicker();
+              }}
             />
           </Stack>
         </Stack>
@@ -358,17 +365,17 @@ const Round = ({ isMobile }) => {
               background:
                 "radial-gradient(circle, rgba(70,174,247,1) 0%, rgba(29,213,230,1) 100%)",
 
-							color: "#FFF",
-							mb: "10px",
-						}}
-						onClick={goToSearch}
-					>
-						Search For Best Flights
-					</Button>
-				</Stack>
-			</Grid>
-		</Grid>
-	);
+              color: "#FFF",
+              mb: "10px",
+            }}
+            onClick={goToSearch}
+          >
+            Search For Best Flights
+          </Button>
+        </Stack>
+      </Grid>
+    </Grid>
+  );
 };
 
 export default Round;
