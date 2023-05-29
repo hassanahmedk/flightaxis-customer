@@ -11,6 +11,7 @@ import SearchResultsRoundTrip from "./pages/search-results/SearchResultsRoundTri
 import SearchResultsOneWay from "./pages/search-results/SearchResultsOneWay";
 import Summary from "./pages/summary/Summary";
 import Loader from "./pages/loader/Loader";
+import CheapFlights from "./pages/cheapFlights/CheapFlights";
 
 function App() {
 	const theme = useTheme();
@@ -36,6 +37,7 @@ function App() {
 				/>
 				<Route path="/summary" element={<Summary isMobile={isMobile} />} />
 				<Route path="/flights-loader" element={<Loader />} />
+				<Route path="/cheap-flights" element={<CheapFlights />} />
 			</Routes>
 			<Footer isMobile={isMobile} />
 		</>

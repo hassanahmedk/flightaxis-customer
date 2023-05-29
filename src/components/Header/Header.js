@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useLocation } from "react-router-dom";
 import GetAQuoteDialog from "../getaquotedialog/GetAQuoteDialog";
 import { useEffect } from "react";
+import FlightsPopover from "../popover/FlightsPopover";
 
 const Header = ({ isMobile }) => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
@@ -36,7 +37,15 @@ const Header = ({ isMobile }) => {
 
 	const location = useLocation();
 
-	console.log(location);
+	const [openPop, setOpenPop] = useState(false);
+
+	const handleClickPop = (event) => {
+		setOpenPop(true);
+	};
+
+	const handleClosePop = () => {
+		setOpenPop(false);
+	};
 
 	useEffect(() => {
 		setActivePage(location.pathname);
@@ -168,6 +177,25 @@ const Header = ({ isMobile }) => {
 							<MenuItem onClick={handleCloseNavMenu}>
 								<Typography
 									variant="body1"
+									textAlign="center"
+									sx={{
+										display: "block",
+										margin: "10px",
+										textDecoration: "none",
+									}}
+								>
+									<Link
+										style={{ textDecoration: "none", color: "black" }}
+										to="/cheap-flights"
+										onClick={handleClickPop}
+									>
+										Destinations
+									</Link>
+								</Typography>
+							</MenuItem>
+							<MenuItem onClick={handleCloseNavMenu}>
+								<Typography
+									variant="body1"
 									sx={{
 										display: "block",
 										margin: "10px",
@@ -275,6 +303,29 @@ const Header = ({ isMobile }) => {
 									Home
 								</Link>
 							</Typography>
+							<Typography
+								variant="h6"
+								component="p"
+								sx={{
+									my: 2,
+									display: "block",
+									margin: "10px",
+									textDecoration: "none",
+									color: activePage === "/cheap-flights" ? "#0f6bd7" : "#fff",
+									fontFamily: "Poppins",
+									"&:hover": {
+										opacity: 0.9,
+									},
+								}}
+								onClick={handleClickPop}
+							>
+								Destinations
+							</Typography>
+							<FlightsPopover
+								openPop={openPop}
+								handleClickPop={handleClickPop}
+								handleClosePop={handleClosePop}
+							/>
 							<Typography
 								variant="h6"
 								component="p"
