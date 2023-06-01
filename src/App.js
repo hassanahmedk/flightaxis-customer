@@ -12,6 +12,9 @@ import SearchResultsOneWay from "./pages/search-results/SearchResultsOneWay";
 import Summary from "./pages/summary/Summary";
 import Loader from "./pages/loader/Loader";
 import CheapFlights from "./pages/cheapFlights/CheapFlights";
+import PackageSummaryPage from "./pages/summary/PackageSummaryPage";
+import GetAQuote from "./components/getaquotedialog/GetAQuote";
+import PackageLoader from "./pages/loader/PackageLoader";
 
 function App() {
 	const theme = useTheme();
@@ -37,7 +40,10 @@ function App() {
 				/>
 				<Route path="/summary" element={<Summary isMobile={isMobile} />} />
 				<Route path="/flights-loader" element={<Loader />} />
-				<Route path="/cheap-flights" element={<CheapFlights />} />
+				<Route path="/packages-loader" element={<PackageLoader />} />
+				<Route path="/destination" element={<CheapFlights isMobile={isMobile}/>} />
+				<Route path="/package-summary" element={<PackageSummaryPage isMobile={isMobile}/>} />
+				<Route path="/get-quote" element={<GetAQuote isMobile={isMobile}/>} />
 			</Routes>
 			<Footer isMobile={isMobile} />
 		</>

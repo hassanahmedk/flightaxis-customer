@@ -16,6 +16,8 @@ import GetAQuoteDialog from "../getaquotedialog/GetAQuoteDialog";
 import { useEffect } from "react";
 import FlightsPopover from "../popover/FlightsPopover";
 
+import "../../assets/css/header.css"
+
 const Header = ({ isMobile }) => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -182,15 +184,13 @@ const Header = ({ isMobile }) => {
 										display: "block",
 										margin: "10px",
 										textDecoration: "none",
+										cursor:"pointer"
 									}}
+									onClick={handleClickPop}
 								>
-									<Link
-										style={{ textDecoration: "none", color: "black" }}
-										to="/cheap-flights"
-										onClick={handleClickPop}
-									>
+									
 										Destinations
-									</Link>
+									
 								</Typography>
 							</MenuItem>
 							<MenuItem onClick={handleCloseNavMenu}>
@@ -311,20 +311,23 @@ const Header = ({ isMobile }) => {
 									display: "block",
 									margin: "10px",
 									textDecoration: "none",
-									color: activePage === "/cheap-flights" ? "#0f6bd7" : "#fff",
+									color: activePage === "/destination" ? "#0f6bd7" : "#fff",
 									fontFamily: "Poppins",
 									"&:hover": {
 										opacity: 0.9,
 									},
+									cursor:"pointer"
 								}}
 								onClick={handleClickPop}
 							>
 								Destinations
 							</Typography>
+							
 							<FlightsPopover
 								openPop={openPop}
 								handleClickPop={handleClickPop}
 								handleClosePop={handleClosePop}
+								isMobile={isMobile}
 							/>
 							<Typography
 								variant="h6"

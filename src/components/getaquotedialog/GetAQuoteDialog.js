@@ -18,7 +18,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import CloseIcon from '@mui/icons-material/Close';
 
-const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
+const GetAQuoteDialog = ({ isMobile, open, setOpen, closeParent, label }) => {
 	/* const handleClickOpen = () => {
 		setOpen(true);
 	}; */
@@ -102,6 +102,9 @@ const GetAQuoteDialog = ({ isMobile, open, setOpen }) => {
 				no_of_passengers: "",
 				departing_on: "",
 				returning_on: "",})
+				if(label==="destination"){
+					closeParent();
+				}
 			})
 			.catch((error) => alert("An error occured, try again"));
 		}

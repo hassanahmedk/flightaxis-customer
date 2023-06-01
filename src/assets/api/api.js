@@ -38,3 +38,21 @@ export const sendQuote = async (formData) => {
   const data = await response.json();
   return data;
 };
+
+export const getPackages = async (city) => {
+  const response = await fetch(`https://flightaxis.vercel.app/packages/${city}`);
+  const data = await response.json();
+  return data;
+};
+
+export const sendPackageBooking = async (formData) => {
+  const response = await fetch("https://flightaxis.vercel.app/packageBookings", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+  const data = await response.json();
+  return data;
+};

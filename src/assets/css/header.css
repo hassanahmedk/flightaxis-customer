@@ -1,0 +1,76 @@
+.destinations-heading{
+    margin-left:1rem;
+}
+
+.destination-links{
+    width: 60vw;
+}
+
+.countries-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem 6rem;
+  font-size: 1.2rem;
+}
+
+.country-link, .city-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 0.1rem;
+    padding: 0.4rem;
+    cursor: pointer;
+    position: relative;
+}
+.country-link:hover, .city-link:hover{
+    background-color: #76cfde;
+    color: #fff;
+}
+
+.city-links{
+    position: absolute;
+    border: 1px solid rgba(10,10,10,0.4);
+    border-top: 2px solid #76cfde;
+    display: flex;
+    flex-direction: column;
+    right: -8rem;
+    top: 0.2rem;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+.city-link{
+    color: #101010;
+    padding: 0.5rem 2rem;
+}
+
+
+
+
+@media(max-width:500px){
+    .countries-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 3rem;
+      }
+
+      .city-links_west-africa{
+        position: absolute;
+        border: 1px solid rgba(10,10,10,0.4);
+        border-top: 2px solid #76cfde;
+        display: flex;
+        flex-direction: column;
+        right: 5rem;
+        top: 0.2rem;
+        z-index: 1;
+        background-color: #ffffff;
+    }
+}
+/* 
+
+
+
+POPULAR DESTINATIONS
+   
+               
+*/
