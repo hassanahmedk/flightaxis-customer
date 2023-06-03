@@ -107,7 +107,7 @@ const RejForm = ({ isMobile }) => {
 						justifyContent: "flex-start",
 						alignItems: "center",
 						width: isMobile ? "90vw" : "85vw",
-						overflow: "hidden",
+						overflowY: "scroll",
 						borderRadius: "10px",
 						minHeight: isMobile ? (value === 0 ? "120vh" : "110vh") : "50vh",
 						background: "#f0f0e8",

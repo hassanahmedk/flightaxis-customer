@@ -38,7 +38,7 @@ function AutocompleteAirports(props) {
     sx={
       props.isMobile && props.width
         ? { width: "94%", m: 1 }
-        : { width: "100%", m: 1 }
+        : { width: "95%", m: 1 }
     }
     onChange={(event, value) => props.setValue(props.name, value)}
     noOptionsText={optionsText}
